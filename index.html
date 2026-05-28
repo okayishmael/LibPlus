@@ -1,0 +1,1072 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LiberiaVoice — Revenue Strategy</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --ink:#0e0b07;
+  --ink2:#2a2218;
+  --muted:#7a6e5f;
+  --cream:#f9f5ee;
+  --parchment:#ede7d9;
+  --rule:#d4c9b4;
+  --red:#b8211a;
+  --red2:#8c1812;
+  --gold:#c8920a;
+  --gold2:#a37208;
+  --blue:#0f3460;
+  --green:#1a5c30;
+  --teal:#0d5c54;
+  --ff-display:'Cormorant Garamond',Georgia,serif;
+  --ff-body:'Outfit',sans-serif;
+  --max:1160px;
+}
+html{scroll-behavior:smooth;font-size:16px}
+body{
+  font-family:var(--ff-body);
+  background:var(--cream);
+  color:var(--ink);
+  line-height:1.65;
+  overflow-x:hidden;
+}
+
+/* ── ANIMATIONS ── */
+@keyframes fadeUp{from{opacity:0;transform:translateY(28px)}to{opacity:1;transform:none}}
+@keyframes drawLine{from{scaleX:0}to{scaleX:1}}
+@keyframes pulse{0%,100%{opacity:.6}50%{opacity:1}}
+
+.reveal{opacity:0;animation:fadeUp .7s ease forwards}
+.reveal:nth-child(1){animation-delay:.05s}
+.reveal:nth-child(2){animation-delay:.12s}
+.reveal:nth-child(3){animation-delay:.19s}
+.reveal:nth-child(4){animation-delay:.26s}
+.reveal:nth-child(5){animation-delay:.33s}
+.reveal:nth-child(6){animation-delay:.40s}
+.reveal:nth-child(7){animation-delay:.47s}
+.reveal:nth-child(8){animation-delay:.54s}
+
+/* ── LAYOUT ── */
+.wrap{max-width:var(--max);margin:0 auto;padding:0 1.5rem}
+section{padding:5rem 0}
+
+/* ── FLAG BAR ── */
+.flag-bar{display:flex;height:6px}
+.fb{flex:1}
+.fb-r{background:#BF1E2E}.fb-w{background:#fff}.fb-b{background:#003F87}
+
+/* ── NAV ── */
+nav{
+  background:var(--ink);
+  position:sticky;top:0;z-index:100;
+  border-bottom:1px solid rgba(200,146,10,.25);
+}
+.nav-inner{
+  max-width:var(--max);margin:0 auto;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:.9rem 1.5rem;
+  gap:1rem;
+}
+.logo{
+  font-family:var(--ff-display);
+  font-size:1.5rem;font-weight:700;
+  color:#fff;text-decoration:none;
+  letter-spacing:-.01em;
+  white-space:nowrap;
+}
+.logo em{color:var(--gold);font-style:normal}
+.nav-sub{font-size:.6rem;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-top:-3px}
+.nav-pill{
+  font-size:.7rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  background:var(--red);color:#fff;
+  padding:.35rem .9rem;border-radius:2px;text-decoration:none;
+  transition:background .2s;white-space:nowrap;
+}
+.nav-pill:hover{background:var(--red2)}
+.nav-links{display:flex;gap:1.5rem;list-style:none}
+.nav-links a{color:rgba(255,255,255,.55);text-decoration:none;font-size:.78rem;font-weight:400;transition:color .2s}
+.nav-links a:hover{color:var(--gold)}
+
+/* ── HERO ── */
+.hero{
+  background:var(--ink);
+  color:#fff;
+  padding:5.5rem 0 4rem;
+  position:relative;
+  overflow:hidden;
+}
+.hero::before{
+  content:'';
+  position:absolute;inset:0;
+  background:repeating-linear-gradient(
+    -55deg,
+    transparent,transparent 48px,
+    rgba(200,146,10,.03) 48px,rgba(200,146,10,.03) 49px
+  );
+}
+.hero-inner{
+  position:relative;z-index:1;
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:4rem;align-items:center;
+}
+.hero-eyebrow{
+  display:flex;align-items:center;gap:.75rem;
+  font-size:.65rem;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold);font-weight:600;margin-bottom:1.4rem;
+}
+.hero-eyebrow::before{content:'';display:block;width:36px;height:1px;background:var(--gold);flex-shrink:0}
+.hero h1{
+  font-family:var(--ff-display);
+  font-size:clamp(2.4rem,5vw,4.2rem);
+  font-weight:700;line-height:1.08;
+  margin-bottom:1.25rem;
+}
+.hero h1 em{color:var(--gold);font-style:italic}
+.hero-lead{
+  font-size:1rem;color:rgba(255,255,255,.62);
+  line-height:1.8;margin-bottom:2rem;max-width:480px;
+}
+.hero-cta{
+  display:inline-flex;gap:.75rem;flex-wrap:wrap;
+}
+.btn-primary{
+  background:var(--red);color:#fff;
+  font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  padding:.8rem 1.75rem;border-radius:2px;text-decoration:none;border:none;cursor:pointer;
+  transition:background .2s;font-family:var(--ff-body);
+}
+.btn-primary:hover{background:var(--red2)}
+.btn-outline{
+  background:transparent;color:rgba(255,255,255,.7);
+  border:1px solid rgba(255,255,255,.2);
+  font-size:.75rem;font-weight:500;letter-spacing:.06em;text-transform:uppercase;
+  padding:.8rem 1.75rem;border-radius:2px;text-decoration:none;
+  transition:all .2s;font-family:var(--ff-body);cursor:pointer;
+}
+.btn-outline:hover{border-color:rgba(255,255,255,.5);color:#fff}
+
+/* ── STAT GRID ── */
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:rgba(255,255,255,.06);border-radius:4px;overflow:hidden}
+.stat-card{
+  background:rgba(255,255,255,.04);
+  padding:1.5rem;
+  position:relative;
+}
+.stat-card::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:var(--gold)}
+.stat-card:nth-child(2)::before{background:var(--red)}
+.stat-card:nth-child(3)::before{background:#185FA5}
+.stat-card:nth-child(4)::before{background:var(--green)}
+.stat-num{
+  font-family:var(--ff-display);
+  font-size:2.6rem;font-weight:700;
+  color:var(--gold);line-height:1;margin-bottom:.4rem;
+}
+.stat-card:nth-child(2) .stat-num{color:#e06b6b}
+.stat-card:nth-child(3) .stat-num{color:#6baae0}
+.stat-card:nth-child(4) .stat-num{color:#6bbf85}
+.stat-label{font-size:.72rem;color:rgba(255,255,255,.38);text-transform:uppercase;letter-spacing:.1em}
+
+/* ── SECTION HEADERS ── */
+.sec-header{margin-bottom:3rem}
+.sec-eyebrow{
+  font-size:.62rem;font-weight:600;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--red);margin-bottom:.6rem;display:block;
+}
+.sec-eyebrow--gold{color:var(--gold2)}
+.sec-eyebrow--blue{color:var(--blue)}
+.sec-eyebrow--green{color:var(--green)}
+.sec-title{
+  font-family:var(--ff-display);
+  font-size:clamp(1.8rem,3.5vw,2.8rem);
+  font-weight:700;line-height:1.15;
+  margin-bottom:.75rem;
+}
+.sec-lead{font-size:.95rem;color:var(--muted);max-width:580px;line-height:1.8}
+
+/* ── REFRAME SECTION ── */
+.reframe{background:var(--ink2);color:#fff;padding:4rem 0}
+.reframe-inner{
+  display:grid;grid-template-columns:1fr 2px 1fr;
+  gap:3rem;align-items:center;
+}
+.reframe-divider{background:rgba(200,146,10,.3);align-self:stretch}
+.reframe-side h3{
+  font-family:var(--ff-display);
+  font-size:1.6rem;font-weight:700;
+  margin-bottom:1rem;line-height:1.2;
+}
+.reframe-side p{font-size:.9rem;color:rgba(255,255,255,.6);line-height:1.8}
+.cross-out{
+  font-family:var(--ff-display);font-size:1.6rem;
+  color:rgba(255,255,255,.25);
+  position:relative;display:inline-block;
+  margin-bottom:.5rem;
+}
+.cross-out::after{
+  content:'';position:absolute;
+  left:-4px;right:-4px;top:50%;height:2px;
+  background:var(--red);transform:rotate(-2deg);
+}
+.reframe-arrow{
+  font-size:2.5rem;color:var(--gold);
+  font-family:var(--ff-display);
+  text-align:center;
+  display:flex;align-items:center;justify-content:center;
+}
+
+/* ── TIER SECTIONS ── */
+.tier-label{
+  display:flex;align-items:center;gap:1rem;
+  margin-bottom:1.75rem;
+}
+.tier-num{
+  font-family:var(--ff-display);
+  font-size:3rem;font-weight:700;
+  color:var(--rule);line-height:1;
+  flex-shrink:0;
+}
+.tier-info{border-left:3px solid var(--rule);padding-left:1rem}
+.tier-info h3{font-family:var(--ff-display);font-size:1.15rem;font-weight:600;margin-bottom:.2rem}
+.tier-info p{font-size:.78rem;color:var(--muted)}
+
+/* ── REVENUE CARDS ── */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1.25rem}
+.rcard{
+  background:#fff;
+  border:1px solid var(--rule);
+  border-radius:4px;
+  padding:1.5rem;
+  cursor:pointer;
+  transition:all .2s;
+  position:relative;
+  overflow:hidden;
+}
+.rcard::before{
+  content:'';
+  position:absolute;top:0;left:0;right:0;height:3px;
+}
+.rcard.c-red::before{background:var(--red)}
+.rcard.c-gold::before{background:var(--gold)}
+.rcard.c-blue::before{background:var(--blue)}
+.rcard.c-green::before{background:var(--green)}
+.rcard.c-teal::before{background:var(--teal)}
+.rcard:hover{border-color:var(--muted);transform:translateY(-2px)}
+.rcard-top{display:flex;align-items:flex-start;justify-content:space-between;gap:.5rem;margin-bottom:.6rem}
+.rcard-name{font-size:.92rem;font-weight:600;color:var(--ink);line-height:1.3}
+.rcard-badge{
+  font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:.2rem .6rem;border-radius:2px;white-space:nowrap;flex-shrink:0;
+}
+.badge-high{background:#fde8e8;color:#7a1010}
+.badge-med{background:#fef3d8;color:#7a5500}
+.badge-grow{background:#e0f0fe;color:#0a3d6b}
+.rcard-desc{font-size:.8rem;color:var(--muted);line-height:1.6;margin-bottom:.85rem}
+.rcard-est{
+  font-size:.72rem;font-weight:500;
+  border-top:1px solid var(--parchment);
+  padding-top:.7rem;color:var(--muted);
+}
+.rcard-est strong{color:var(--ink);font-weight:600}
+
+/* ── DETAIL PANEL ── */
+.detail-panel{
+  background:var(--parchment);
+  border:1px solid var(--rule);
+  border-radius:4px;
+  padding:2rem 2.25rem;
+  margin-top:1.5rem;
+  display:none;
+  animation:fadeUp .3s ease;
+}
+.detail-panel.open{display:block}
+.detail-header{display:flex;align-items:flex-start;justify-content:space-between;gap:1rem;margin-bottom:1rem}
+.detail-panel h3{font-family:var(--ff-display);font-size:1.4rem;font-weight:700;line-height:1.2}
+.close-btn{
+  background:none;border:1px solid var(--rule);
+  font-size:.7rem;color:var(--muted);padding:.3rem .8rem;
+  border-radius:2px;cursor:pointer;font-family:var(--ff-body);
+  flex-shrink:0;transition:all .2s;
+}
+.close-btn:hover{border-color:var(--ink);color:var(--ink)}
+.detail-panel p{font-size:.88rem;color:var(--ink2);line-height:1.8;margin-bottom:1rem}
+.detail-steps{list-style:none}
+.detail-steps li{
+  font-size:.82rem;color:var(--ink2);
+  padding:.5rem 0;
+  border-bottom:1px dashed var(--rule);
+  display:flex;gap:.75rem;align-items:flex-start;
+  line-height:1.55;
+}
+.detail-steps li:last-child{border-bottom:none}
+.step-arrow{color:var(--gold2);flex-shrink:0;font-weight:600}
+
+/* ── INCOME TABLE ── */
+.table-section{background:var(--ink);color:#fff}
+.income-table{width:100%;border-collapse:collapse;font-size:.85rem}
+.income-table thead th{
+  font-size:.62rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(255,255,255,.4);padding:.75rem 1rem;
+  border-bottom:1px solid rgba(255,255,255,.08);text-align:left;
+}
+.income-table tbody tr{border-bottom:1px solid rgba(255,255,255,.05);transition:background .15s}
+.income-table tbody tr:hover{background:rgba(255,255,255,.03)}
+.income-table td{padding:.9rem 1rem;vertical-align:middle}
+.income-table .source-name{font-weight:500;color:#fff}
+.income-table .tier-badge{
+  font-size:.58rem;font-weight:600;letter-spacing:.06em;text-transform:uppercase;
+  padding:.15rem .55rem;border-radius:2px;
+}
+.t1{background:rgba(184,33,26,.25);color:#f08080}
+.t2{background:rgba(200,146,10,.2);color:#f0c060}
+.t3{background:rgba(15,52,96,.4);color:#80b0e0}
+.income-table .yr1{color:var(--gold)}
+.income-table .yr2{color:#6bbf85}
+.income-table tfoot td{
+  padding:1rem;font-weight:600;font-size:.9rem;
+  border-top:1px solid rgba(255,255,255,.15);
+}
+.income-table tfoot .yr1{font-family:var(--ff-display);font-size:1.2rem;color:var(--gold)}
+.income-table tfoot .yr2{font-family:var(--ff-display);font-size:1.2rem;color:#6bbf85}
+.tbl-wrap{overflow-x:auto;border-radius:4px;border:1px solid rgba(255,255,255,.07)}
+
+/* ── KEY INSIGHT ── */
+.insight-strip{
+  background:var(--red);color:#fff;
+  padding:3.5rem 0;text-align:center;
+}
+.insight-strip blockquote{
+  font-family:var(--ff-display);
+  font-size:clamp(1.4rem,3vw,2.2rem);
+  font-weight:600;font-style:italic;
+  max-width:720px;margin:0 auto;
+  line-height:1.4;
+}
+.insight-strip cite{
+  display:block;font-size:.72rem;font-weight:400;font-style:normal;
+  letter-spacing:.15em;text-transform:uppercase;
+  margin-top:1.25rem;color:rgba(255,255,255,.6);
+}
+
+/* ── CLAUDE SECTION ── */
+.claude-section{background:var(--parchment)}
+.claude-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1rem}
+.claude-card{
+  background:#fff;border:1px solid var(--rule);
+  border-radius:4px;padding:1.25rem;
+}
+.claude-num{
+  font-family:var(--ff-display);font-size:2rem;font-weight:700;
+  color:var(--rule);line-height:1;margin-bottom:.5rem;
+}
+.claude-card h4{font-size:.88rem;font-weight:600;margin-bottom:.4rem}
+.claude-card p{font-size:.78rem;color:var(--muted);line-height:1.65}
+
+/* ── FOOTER ── */
+footer{
+  background:var(--ink);color:rgba(255,255,255,.4);
+  padding:2.5rem 0;
+  text-align:center;
+  border-top:1px solid rgba(200,146,10,.15);
+}
+footer .logo{font-size:1.8rem;display:block;margin-bottom:.5rem}
+footer p{font-size:.75rem;line-height:1.9}
+footer a{color:rgba(255,255,255,.35);text-decoration:none}
+footer a:hover{color:var(--gold)}
+
+/* ── RESPONSIVE ── */
+@media(max-width:900px){
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .stat-grid{grid-template-columns:1fr 1fr}
+  .reframe-inner{grid-template-columns:1fr;gap:2rem}
+  .reframe-divider{display:none}
+  nav .nav-links{display:none}
+}
+@media(max-width:600px){
+  section{padding:3rem 0}
+  .hero{padding:3.5rem 0 2.5rem}
+  .cards-grid{grid-template-columns:1fr}
+  .detail-panel{padding:1.25rem 1.25rem}
+  .insight-strip{padding:2.5rem 0}
+}
+
+/* ── SUCCESS ASSESSMENT ── */
+#success{background:var(--cream)}
+.sa-top{display:grid;grid-template-columns:200px 1fr;gap:2rem;align-items:start;margin-bottom:2rem}
+.sa-ring-wrap{position:relative;width:160px;height:160px;margin:0 auto .75rem}
+.sa-ring-wrap svg{transform:rotate(-90deg)}
+.sa-ring-center{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center}
+.sa-ring-num{font-family:var(--ff-display);font-size:2rem;font-weight:700;color:var(--ink);line-height:1}
+.sa-ring-lbl{font-size:.62rem;color:var(--muted);text-transform:uppercase;letter-spacing:.1em;margin-top:3px}
+.sa-ring-verdict{font-size:.75rem;color:var(--muted);text-align:center;margin-top:.5rem}
+.sa-metrics{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.sa-metric{background:#fff;border-radius:4px;padding:.75rem 1rem;border:1px solid var(--rule)}
+.sa-metric-label{font-size:.65rem;color:var(--muted);margin-bottom:4px;text-transform:uppercase;letter-spacing:.07em}
+.sa-metric-val{font-family:var(--ff-display);font-size:1.6rem;font-weight:700;color:var(--ink)}
+.sa-metric-sub{font-size:.65rem;color:var(--muted)}
+.sa-factor-lbl{font-size:.62rem;font-weight:600;letter-spacing:.15em;text-transform:uppercase;color:var(--muted);margin-bottom:1rem}
+.sa-factor{background:#fff;border:1px solid var(--rule);border-radius:4px;padding:1rem 1.25rem;margin-bottom:10px;cursor:pointer;transition:border-color .2s}
+.sa-factor:hover,.sa-factor.open{border-color:var(--muted)}
+.sa-factor-top{display:flex;align-items:center;gap:12px}
+.sa-factor-name{flex:1;font-size:.88rem;font-weight:500;color:var(--ink)}
+.sa-factor-score-wrap{display:flex;align-items:center;gap:10px}
+.sa-bar-outer{width:100px;height:5px;background:var(--parchment);border-radius:3px;overflow:hidden}
+.sa-bar-inner{height:100%;border-radius:3px;transition:width .4s ease}
+.sa-pct{font-size:.82rem;font-weight:700;width:34px;text-align:right}
+.sa-chevron{font-size:.8rem;color:var(--muted);transition:transform .2s}
+.sa-factor.open .sa-chevron{transform:rotate(180deg)}
+.sa-detail{display:none;margin-top:1rem;padding-top:1rem;border-top:1px solid var(--rule)}
+.sa-factor.open .sa-detail{display:block}
+.sa-detail-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.sa-blocker{background:#fdf0f0;border:1px solid #f5cece;border-radius:4px;padding:.75rem 1rem}
+.sa-boost{background:#f0faf4;border:1px solid #b8dfca;border-radius:4px;padding:.75rem 1rem}
+.sa-dl{font-size:.62rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;margin-bottom:6px}
+.sa-blocker .sa-dl{color:#7a1010}
+.sa-boost .sa-dl{color:#1a5c30}
+.sa-dlist{list-style:none}
+.sa-dlist li{font-size:.78rem;color:var(--mid);padding:3px 0;line-height:1.5;display:flex;gap:6px}
+.sa-dlist li::before{flex-shrink:0;font-size:.7rem;margin-top:2px}
+.sa-blocker .sa-dlist li::before{content:'×';color:#a32d2d;font-weight:700}
+.sa-boost .sa-dlist li::before{content:'↑';color:#1a5c30;font-weight:700}
+.sa-overall{margin-top:1.5rem;background:#fff;border-radius:4px;padding:1.25rem 1.5rem;border-left:4px solid var(--green)}
+.sa-overall-title{font-size:.88rem;font-weight:600;color:var(--ink);margin-bottom:6px}
+.sa-overall-body{font-size:.82rem;color:var(--muted);line-height:1.7}
+@media(max-width:700px){.sa-top{grid-template-columns:1fr}.sa-detail-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<!-- Flag bar -->
+<div class="flag-bar">
+  <div class="fb fb-r"></div><div class="fb fb-w"></div><div class="fb fb-r"></div>
+  <div class="fb fb-w"></div><div class="fb fb-r"></div><div class="fb fb-b"></div>
+  <div class="fb fb-r"></div><div class="fb fb-w"></div><div class="fb fb-r"></div>
+  <div class="fb fb-w"></div><div class="fb fb-r"></div>
+</div>
+
+<!-- Nav -->
+<nav>
+  <div class="nav-inner">
+    <a href="#" class="logo">Liberia<em>Voice</em>
+      <span class="nav-sub">Revenue Strategy</span>
+    </a>
+    <ul class="nav-links">
+      <li><a href="#tier1">Tier 1</a></li>
+      <li><a href="#tier2">Tier 2</a></li>
+      <li><a href="#tier3">Tier 3</a></li>
+      <li><a href="#projections">Projections</a></li>
+      <li><a href="#success">Assessment</a></li>
+      <li><a href="#claude">AI Partner</a></li>
+    </ul>
+    <a href="#projections" class="nav-pill">View Income Plan</a>
+  </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+  <div class="wrap">
+    <div class="hero-inner">
+      <div>
+        <div class="hero-eyebrow">LiberiaVoice · 2025 Revenue Blueprint</div>
+        <h1>Your audience<br>is the product,<br>not the <em>customer.</em></h1>
+        <p class="hero-lead">Forget reader subscriptions — your readers' spending power is low and AI has killed the paywall. The real money flows from organizations that desperately want access to your Liberian audience. Here is exactly how to capture it.</p>
+        <div class="hero-cta">
+          <a href="#tier1" class="btn-primary">See the Revenue Streams</a>
+          <a href="#projections" class="btn-outline">Jump to Projections</a>
+        </div>
+      </div>
+      <div>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <div class="stat-num">$24K</div>
+            <div class="stat-label">Year 1 floor target</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">$150K</div>
+            <div class="stat-label">Year 2 ceiling target</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">~5%</div>
+            <div class="stat-label">Revenue from subscriptions</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-num">10+</div>
+            <div class="stat-label">Distinct income streams</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Core reframe -->
+<section class="reframe" id="reframe">
+  <div class="wrap">
+    <div class="reframe-inner">
+      <div class="reframe-side">
+        <div class="cross-out">Ask readers to pay</div>
+        <p>AI tools give anyone free access to news, summaries, and analysis on demand. Liberians with limited spending power will not pay $5/month for content they can get free. Chasing subscriptions in this market is a losing strategy from day one.</p>
+      </div>
+      <div class="reframe-divider"></div>
+      <div class="reframe-side">
+        <h3>Sell access to your audience — to those who can pay.</h3>
+        <p>NGOs, telecoms, governments, diaspora businesses, and development agencies all hold real budgets. They cannot reach your specific, educated, English-literate Liberian audience anywhere else. You are the bridge — and the bridge charges a toll.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 1 -->
+<section id="tier1">
+  <div class="wrap">
+    <div class="tier-label">
+      <div class="tier-num">01</div>
+      <div class="tier-info">
+        <h3>Highest income potential</h3>
+        <p>Money comes from outsiders, not readers — organizations with hard currency budgets who need your audience</p>
+      </div>
+    </div>
+    <div class="cards-grid" id="tier1-grid">
+      <div class="rcard c-red reveal" onclick="showDetail('ngo','tier1-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">NGO &amp; Development Agency Ads</span>
+          <span class="rcard-badge badge-high">Highest $$$</span>
+        </div>
+        <div class="rcard-desc">INGOs, UN agencies, and development orgs pay premium USD rates to reach educated Liberians. USAID, UNICEF, WHO, IRC, NED — they all have marketing budgets and need your audience.</div>
+        <div class="rcard-est">Per deal: <strong>$500 – $3,000</strong></div>
+      </div>
+      <div class="rcard c-red reveal" onclick="showDetail('diaspora','tier1-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Diaspora Business Advertising</span>
+          <span class="rcard-badge badge-high">Highest $$$</span>
+        </div>
+        <div class="rcard-desc">Liberian businesses in the US, UK, and Europe need to reach the homeland. Remittance services, shipping companies, law firms, real estate — they can't find your audience anywhere else.</div>
+        <div class="rcard-est">Per deal: <strong>$300 – $1,500 / month</strong></div>
+      </div>
+      <div class="rcard c-gold reveal" onclick="showDetail('telecom','tier1-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Telecom &amp; Mobile Money</span>
+          <span class="rcard-badge badge-high">High $$$</span>
+        </div>
+        <div class="rcard-desc">Lonestar Cell MTN, Orange Liberia, and mobile money platforms have the largest advertising budgets in Liberia. One partnership covers months of operating costs.</div>
+        <div class="rcard-est">Per deal: <strong>$1,000 – $5,000 / month</strong></div>
+      </div>
+      <div class="rcard c-gold reveal" onclick="showDetail('govt','tier1-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Government Public Notices</span>
+          <span class="rcard-badge badge-high">Reliable $$$</span>
+        </div>
+        <div class="rcard-desc">Ministries are legally required to publish public notices and tenders. They pay per insertion. They use outdated print — you offer digital reach at lower cost and higher impact.</div>
+        <div class="rcard-est">Per notice: <strong>$200 – $800</strong></div>
+      </div>
+    </div>
+    <div class="detail-panel" id="tier1-detail">
+      <div class="detail-header">
+        <h3 id="tier1-detail-title"></h3>
+        <button class="close-btn" onclick="closeDetail('tier1-detail')">Close ×</button>
+      </div>
+      <p id="tier1-detail-body"></p>
+      <ul class="detail-steps" id="tier1-detail-steps"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 2 -->
+<section id="tier2" style="background:var(--parchment)">
+  <div class="wrap">
+    <div class="tier-label">
+      <div class="tier-num">02</div>
+      <div class="tier-info">
+        <h3>Earned media &amp; service fees</h3>
+        <p>You sell skills and platform, not just eyeballs — recurring retainer income with high margins</p>
+      </div>
+    </div>
+    <div class="cards-grid" id="tier2-grid">
+      <div class="rcard c-blue reveal" onclick="showDetail('agency','tier2-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Content Agency Services</span>
+          <span class="rcard-badge badge-med">Strong potential</span>
+        </div>
+        <div class="rcard-desc">Use your AI-powered editorial team to produce content for Liberian businesses, NGOs, and politicians. Social media management, press releases, annual reports, grant writing.</div>
+        <div class="rcard-est">Retainer: <strong>$300 – $1,200 / month per client</strong></div>
+      </div>
+      <div class="rcard c-blue reveal" onclick="showDetail('events','tier2-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Sponsored Events &amp; Summits</span>
+          <span class="rcard-badge badge-med">Strong potential</span>
+        </div>
+        <div class="rcard-desc">Virtual summits sponsored by NGOs or embassies. Ticket revenue from diaspora. Physical events in Monrovia sponsored by corporates. One good event equals months of ad revenue.</div>
+        <div class="rcard-est">Per event: <strong>$2,000 – $15,000</strong></div>
+      </div>
+      <div class="rcard c-teal reveal" onclick="showDetail('jobs','tier2-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Jobs &amp; Tenders Board</span>
+          <span class="rcard-badge badge-med">Passive income</span>
+        </div>
+        <div class="rcard-desc">NGOs, embassies, and companies pay to list jobs and tenders. Liberians trust listings from credible media. Charge per listing or monthly — near-zero marginal cost once built.</div>
+        <div class="rcard-est">Per listing: <strong>$20 – $150</strong> · 30+ listings / month possible</div>
+      </div>
+      <div class="rcard c-teal reveal" onclick="showDetail('directory','tier2-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Liberian Business Directory</span>
+          <span class="rcard-badge badge-med">Passive income</span>
+        </div>
+        <div class="rcard-desc">The definitive, trusted directory of Liberian businesses worldwide — home and diaspora. Restaurants in Atlanta, lawyers in London, doctors in Minnesota. Recurring monthly listing revenue.</div>
+        <div class="rcard-est">Per listing: <strong>$5 – $50 / month</strong> · scalable to 500+</div>
+      </div>
+    </div>
+    <div class="detail-panel" id="tier2-detail">
+      <div class="detail-header">
+        <h3 id="tier2-detail-title"></h3>
+        <button class="close-btn" onclick="closeDetail('tier2-detail')">Close ×</button>
+      </div>
+      <p id="tier2-detail-body"></p>
+      <ul class="detail-steps" id="tier2-detail-steps"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- TIER 3 -->
+<section id="tier3">
+  <div class="wrap">
+    <div class="tier-label">
+      <div class="tier-num">03</div>
+      <div class="tier-info">
+        <h3>Digital products &amp; affiliate revenue</h3>
+        <p>Zero audience spending power required — you earn from third-party companies, not your readers</p>
+      </div>
+    </div>
+    <div class="cards-grid" id="tier3-grid">
+      <div class="rcard c-green reveal" onclick="showDetail('affiliate','tier3-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Affiliate &amp; Referral Programs</span>
+          <span class="rcard-badge badge-grow">Grows over time</span>
+        </div>
+        <div class="rcard-desc">Earn commissions from remittance services (Wise, Sendwave, WorldRemit) every time a reader sends money home via your link. Also VPN services, hosting, and online courses.</div>
+        <div class="rcard-est">Per referral: <strong>$5 – $25</strong> · fully passive</div>
+      </div>
+      <div class="rcard c-green reveal" onclick="showDetail('grants','tier3-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">Journalism Grants &amp; Press Funds</span>
+          <span class="rcard-badge badge-grow">Underused goldmine</span>
+        </div>
+        <div class="rcard-desc">Google News Initiative, Meta Journalism Project, INN, and Press Freedom orgs fund African digital media. Many grants go unclaimed. One grant funds 12 months of operations.</div>
+        <div class="rcard-est">Per grant: <strong>$5,000 – $50,000</strong></div>
+      </div>
+      <div class="rcard c-teal reveal" onclick="showDetail('whatsapp','tier3-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">WhatsApp Channel Sponsorship</span>
+          <span class="rcard-badge badge-grow">Fast to monetize</span>
+        </div>
+        <div class="rcard-desc">Once you have 5,000+ subscribers, charge a brand to co-sponsor the daily digest. "Today's news brought to you by X." You write the digest anyway — add one line and get paid.</div>
+        <div class="rcard-est">Monthly: <strong>$200 – $800</strong> per sponsor</div>
+      </div>
+      <div class="rcard c-teal reveal" onclick="showDetail('youtube','tier3-detail')">
+        <div class="rcard-top">
+          <span class="rcard-name">YouTube AdSense</span>
+          <span class="rcard-badge badge-grow">Builds over time</span>
+        </div>
+        <div class="rcard-desc">YouTube pays automatically once you qualify. Diaspora viewers in the US and UK earn 10–20x more per view than Africa-based traffic. Diaspora-targeted content is financially superior.</div>
+        <div class="rcard-est">At 10K subs: <strong>$200 – $800 / month</strong> passively</div>
+      </div>
+    </div>
+    <div class="detail-panel" id="tier3-detail">
+      <div class="detail-header">
+        <h3 id="tier3-detail-title"></h3>
+        <button class="close-btn" onclick="closeDetail('tier3-detail')">Close ×</button>
+      </div>
+      <p id="tier3-detail-body"></p>
+      <ul class="detail-steps" id="tier3-detail-steps"></ul>
+    </div>
+  </div>
+</section>
+
+<!-- INSIGHT STRIP -->
+<div class="insight-strip">
+  <div class="wrap">
+    <blockquote>
+      "Never charge the person with no money. Charge the institution that needs the person with no money."
+      <cite>The LiberiaVoice Revenue Principle</cite>
+    </blockquote>
+  </div>
+</div>
+
+<!-- PROJECTIONS -->
+<section id="projections" class="table-section">
+  <div class="wrap">
+    <div class="sec-header">
+      <span class="sec-eyebrow" style="color:var(--gold)">Income projections</span>
+      <h2 class="sec-title" style="color:#fff">Honest year-by-year income map</h2>
+      <p class="sec-lead" style="color:rgba(255,255,255,.5)">Conservative estimates. No viral assumptions. Built on real client budgets that exist in the Liberian market today.</p>
+    </div>
+    <div class="tbl-wrap">
+      <table class="income-table">
+        <thead>
+          <tr>
+            <th>Revenue source</th>
+            <th>Tier</th>
+            <th>Year 1 (realistic)</th>
+            <th>Year 2 (target)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="source-name">NGO &amp; INGO advertising</td>
+            <td><span class="tier-badge t1">Tier 1</span></td>
+            <td class="yr1">$6,000 – $18,000</td>
+            <td class="yr2">$20,000 – $40,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">Telecom / mobile money sponsorship</td>
+            <td><span class="tier-badge t1">Tier 1</span></td>
+            <td class="yr1">$3,000 – $10,000</td>
+            <td class="yr2">$15,000 – $30,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">Government public notices</td>
+            <td><span class="tier-badge t1">Tier 1</span></td>
+            <td class="yr1">$2,000 – $5,000</td>
+            <td class="yr2">$5,000 – $12,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">Journalism grants (1–2 awarded)</td>
+            <td><span class="tier-badge t1">Tier 1</span></td>
+            <td class="yr1">$5,000 – $20,000</td>
+            <td class="yr2">$10,000 – $30,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">Content agency retainers</td>
+            <td><span class="tier-badge t2">Tier 2</span></td>
+            <td class="yr1">$4,000 – $12,000</td>
+            <td class="yr2">$14,000 – $30,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">Events &amp; virtual summits (×2)</td>
+            <td><span class="tier-badge t2">Tier 2</span></td>
+            <td class="yr1">$3,000 – $10,000</td>
+            <td class="yr2">$8,000 – $20,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">Jobs &amp; tenders board</td>
+            <td><span class="tier-badge t2">Tier 2</span></td>
+            <td class="yr1">$3,000 – $6,000</td>
+            <td class="yr2">$6,000 – $15,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">WhatsApp channel sponsorship</td>
+            <td><span class="tier-badge t3">Tier 3</span></td>
+            <td class="yr1">$1,200 – $3,600</td>
+            <td class="yr2">$3,600 – $7,200</td>
+          </tr>
+          <tr>
+            <td class="source-name">Affiliate &amp; referral programs</td>
+            <td><span class="tier-badge t3">Tier 3</span></td>
+            <td class="yr1">$1,500 – $4,000</td>
+            <td class="yr2">$4,000 – $10,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">Business directory listings</td>
+            <td><span class="tier-badge t3">Tier 3</span></td>
+            <td class="yr1">$600 – $3,000</td>
+            <td class="yr2">$3,000 – $8,000</td>
+          </tr>
+          <tr>
+            <td class="source-name">Reader subscriptions (low priority)</td>
+            <td><span class="tier-badge t3">Tier 3</span></td>
+            <td class="yr1" style="color:rgba(255,255,255,.35)">$500 – $1,500</td>
+            <td class="yr2" style="color:rgba(255,255,255,.35)">$1,500 – $4,000</td>
+          </tr>
+        </tbody>
+        <tfoot>
+          <tr>
+            <td colspan="2" style="color:rgba(255,255,255,.6);font-size:.78rem">Combined realistic total</td>
+            <td class="yr1">$29,800 – $93,100</td>
+            <td class="yr2">$90,100 – $206,200</td>
+          </tr>
+        </tfoot>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CLAUDE PARTNER -->
+<section id="claude" class="claude-section">
+  <div class="wrap">
+    <div class="sec-header">
+      <span class="sec-eyebrow sec-eyebrow--blue">AI-powered newsroom</span>
+      <h2 class="sec-title">How Claude makes this possible</h2>
+      <p class="sec-lead">A 2-person team with Claude AI can outproduce a 15-person newsroom — and pitch clients with professional-grade materials from day one.</p>
+    </div>
+    <div class="claude-grid">
+      <div class="claude-card reveal">
+        <div class="claude-num">01</div>
+        <h4>Article drafting at scale</h4>
+        <p>Claude researches and drafts articles across all 11 sectors in minutes. Human editors refine. 80% less production time means more content and more inventory to sell.</p>
+      </div>
+      <div class="claude-card reveal">
+        <div class="claude-num">02</div>
+        <h4>Grant application writing</h4>
+        <p>One well-written grant application can fund 12 months of operations. Claude writes compelling, structured grant proposals that dramatically improve your success rate.</p>
+      </div>
+      <div class="claude-card reveal">
+        <div class="claude-num">03</div>
+        <h4>Advertiser pitch decks &amp; media kits</h4>
+        <p>Claude produces professional media kits, sponsorship proposals, and advertiser decks — so you approach NGOs and telecoms looking credible from Day 1, not Day 180.</p>
+      </div>
+      <div class="claude-card reveal">
+        <div class="claude-num">04</div>
+        <h4>Social content factory</h4>
+        <p>For every article, Claude generates platform-specific posts for Facebook, TikTok, X, WhatsApp, and Instagram instantly — maximizing reach without multiplying workload.</p>
+      </div>
+      <div class="claude-card reveal">
+        <div class="claude-num">05</div>
+        <h4>Content agency delivery</h4>
+        <p>When you sell content services to clients, Claude does 80% of the execution. You collect retainer fees; Claude writes the social posts, press releases, and newsletters.</p>
+      </div>
+      <div class="claude-card reveal">
+        <div class="claude-num">06</div>
+        <h4>Analytics &amp; reporting</h4>
+        <p>Claude turns raw traffic and social data into polished monthly reports for advertisers — the professional-grade proof of ROI that makes clients renew and upgrade.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SUCCESS ASSESSMENT -->
+<section id="success" style="padding:5rem 0;">
+  <div class="wrap">
+    <div class="sec-header">
+      <span class="sec-eyebrow">Strategic analysis</span>
+      <h2 class="sec-title">Success assessment in the age of AI &amp; social media</h2>
+      <p class="sec-lead">Eight critical factors scored and ranked — with the exact blockers and improvement actions for each one. Click any factor to expand.</p>
+    </div>
+
+    <div class="sa-top">
+      <div style="text-align:center;">
+        <div class="sa-ring-wrap">
+          <svg width="160" height="160" viewBox="0 0 160 160">
+            <circle cx="80" cy="80" r="68" fill="none" stroke="var(--rule)" stroke-width="10"/>
+            <circle id="sa-ring" cx="80" cy="80" r="68" fill="none" stroke="#1a5c30" stroke-width="10"
+              stroke-dasharray="427.26" stroke-dashoffset="427.26" stroke-linecap="round"
+              style="transition:stroke-dashoffset 1.2s ease,stroke .4s;"/>
+          </svg>
+          <div class="sa-ring-center">
+            <span class="sa-ring-num" id="sa-num">—</span>
+            <span class="sa-ring-lbl">overall score</span>
+          </div>
+        </div>
+        <div class="sa-ring-verdict" id="sa-verdict"></div>
+      </div>
+      <div class="sa-metrics">
+        <div class="sa-metric">
+          <div class="sa-metric-label">Highest factor</div>
+          <div class="sa-metric-val" id="sa-high">—</div>
+          <div class="sa-metric-sub" id="sa-high-name"></div>
+        </div>
+        <div class="sa-metric">
+          <div class="sa-metric-label">Weakest factor</div>
+          <div class="sa-metric-val" id="sa-low">—</div>
+          <div class="sa-metric-sub" id="sa-low-name"></div>
+        </div>
+        <div class="sa-metric">
+          <div class="sa-metric-label">Quick-win potential</div>
+          <div class="sa-metric-val" id="sa-gain">—</div>
+          <div class="sa-metric-sub">pts improvable in 90 days</div>
+        </div>
+        <div class="sa-metric">
+          <div class="sa-metric-label">Factors above 70%</div>
+          <div class="sa-metric-val" id="sa-strong">—</div>
+          <div class="sa-metric-sub">of 8 total factors</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="sa-factor-lbl">Click any factor to see what's blocking it and how to improve</div>
+    <div id="sa-factors"></div>
+
+    <div class="sa-overall" id="sa-overall">
+      <div class="sa-overall-title" id="sa-ot"></div>
+      <div class="sa-overall-body" id="sa-ob"></div>
+    </div>
+  </div>
+</section>
+
+<script>
+(function(){
+  var factors=[
+    {name:'Niche audience clarity',score:90,qw:5,
+     blockers:['No registered brand or legal entity yet','Audience segments not formally profiled'],
+     boosts:['Register LiberiaVoice as a brand and media entity immediately','Create 3 audience personas: home Liberian, diaspora US/UK, diaspora West Africa','Build a pre-launch waitlist to validate demand before spending']},
+    {name:'Diaspora digital engagement',score:85,qw:8,
+     blockers:['No presence in existing Liberian diaspora Facebook groups yet','No relationships with diaspora community organizations','Diaspora content not yet differentiated from home content'],
+     boosts:['Join and post in top 20 Liberian diaspora Facebook groups in US, UK, Germany','Partner with ULAA and Liberian community associations as distribution allies','Create a dedicated Diaspora section with its own tone and editorial focus']},
+    {name:'Smartphone & internet access',score:68,qw:10,
+     blockers:['Domestic internet is expensive and slow in rural Liberia','High data costs mean users avoid heavy image/video sites','Electricity reliability limits device uptime'],
+     boosts:['Build a lightweight mobile-first site — pages under 200KB','Make WhatsApp your primary domestic distribution channel','Offer a text-only reading mode and low-data newsletter version','Pursue a zero-rated data deal with Lonestar or Orange']},
+    {name:'AI content production advantage',score:82,qw:12,
+     blockers:['No documented AI editorial workflow yet','Risk of publishing AI errors without a human review gate','Competitors may adopt the same tools quickly'],
+     boosts:['Document a 3-step workflow: Claude drafts → editor verifies → editor publishes','Build a Claude prompt library for each of the 11 content sectors','Use AI for research and structure; human voice must be in every final piece','Train 2–3 Liberian contributor-editors who understand local context']},
+    {name:'Social media distribution reach',score:55,qw:20,
+     blockers:['Zero followers on any platform — starting from scratch','No content calendar or posting consistency plan','No influencer relationships established yet'],
+     boosts:['Launch all 5 platforms on the same day: Facebook, Instagram, TikTok, X, WhatsApp','Post daily on Facebook and TikTok for the first 90 days','Partner with 10 Liberian influencers with 5K+ followers','Run a launch challenge: "Tag a Liberian who needs to see this"']},
+    {name:'Advertiser & NGO market readiness',score:60,qw:18,
+     blockers:['No media kit or advertiser pitch materials exist yet','No relationships with NGO communications directors','Domestic Liberian ad market is small and relationship-driven'],
+     boosts:['Build a media kit with projected audience figures — Claude writes it in an hour','Email 20 NGO communications directors in Liberia this month','Create a 3-month pilot package at 50% discount to win first three advertisers','Apply for Google News Initiative funding for an independent revenue runway']},
+    {name:'Editorial credibility & trust',score:52,qw:22,
+     blockers:['No published editorial policy or ethics statement yet','Unknown brand with zero existing credibility signals','AI-generated content risks being dismissed as low quality'],
+     boosts:['Publish an editorial policy on Day 1 with fact-checking and AI disclosure standards','Recruit one well-known Liberian journalist as Editor-in-Chief or advisory board member','Launch with 3 deeply reported original investigations — quality builds credibility faster than volume','Apply for membership in WAJA and MFWA journalism networks']},
+    {name:'Revenue diversification readiness',score:45,qw:25,
+     blockers:['No revenue streams are operational yet','No affiliate accounts registered','No grant applications submitted','No jobs board or directory infrastructure built'],
+     boosts:['Register for Sendwave, Wise, and WorldRemit affiliate programs this week — free, 30 minutes','Apply to Google News Initiative in Month 1 — deadlines are fixed','Build a basic jobs board in Month 2 and seed it with free listings','Identify 5 content agency clients before launch — sell before you build']}
+  ];
+  function barColor(s){return s>=75?'#1a5c30':s>=55?'#c8920a':'#b8211a';}
+  function verdict(s){
+    if(s>=80)return'Strong foundation — optimize and scale';
+    if(s>=65)return'Good base — targeted improvements needed';
+    if(s>=50)return'Viable — significant gaps to close before launch';
+    return'Early stage — foundational work required first';
+  }
+  var avg=Math.round(factors.reduce(function(a,f){return a+f.score;},0)/factors.length);
+  var ring=document.getElementById('sa-ring');
+  setTimeout(function(){
+    ring.style.strokeDashoffset=427.26*(1-avg/100);
+    ring.style.stroke=barColor(avg);
+  },200);
+  document.getElementById('sa-num').textContent=avg+'%';
+  document.getElementById('sa-verdict').textContent=verdict(avg);
+  var sorted=factors.slice().sort(function(a,b){return b.score-a.score;});
+  document.getElementById('sa-high').textContent=sorted[0].score+'%';
+  document.getElementById('sa-high-name').textContent=sorted[0].name;
+  document.getElementById('sa-low').textContent=sorted[sorted.length-1].score+'%';
+  document.getElementById('sa-low-name').textContent=sorted[sorted.length-1].name;
+  document.getElementById('sa-gain').textContent='+'+factors.reduce(function(a,f){return a+f.qw;},0);
+  document.getElementById('sa-strong').textContent=factors.filter(function(f){return f.score>=70;}).length+' / 8';
+  var ob=document.getElementById('sa-overall');
+  ob.style.borderLeftColor=barColor(avg);
+  document.getElementById('sa-ot').textContent='Overall verdict: '+verdict(avg);
+  document.getElementById('sa-ob').textContent=avg>=75
+    ?'LiberiaVoice has a genuinely strong structural advantage: clear niche, diaspora engagement potential, and AI production efficiency. The main work now is activating revenue channels and building credibility fast. Focus the first 90 days on NGO outreach, editorial policy, and social media growth.'
+    :avg>=55
+    ?'The opportunity is real and the niche is strong, but several foundational gaps — editorial trust, social media presence, and revenue infrastructure — need closing before you can scale. Nearly all are solvable in 90 days with focused action.'
+    :'LiberiaVoice is still at the concept stage. The market opportunity is strong but the gap between idea and a viable media business is significant. Prioritize legal registration, editorial credibility, and one or two early revenue clients above all else in Month 1.';
+  var list=document.getElementById('sa-factors');
+  factors.forEach(function(f){
+    var div=document.createElement('div');
+    div.className='sa-factor';
+    div.innerHTML='<div class="sa-factor-top">'
+      +'<span class="sa-factor-name">'+f.name+'</span>'
+      +'<div class="sa-factor-score-wrap">'
+      +'<div class="sa-bar-outer"><div class="sa-bar-inner" style="width:'+f.score+'%;background:'+barColor(f.score)+';"></div></div>'
+      +'<span class="sa-pct" style="color:'+barColor(f.score)+'">'+f.score+'%</span>'
+      +'</div>'
+      +'<span class="sa-chevron">▼</span>'
+      +'</div>'
+      +'<div class="sa-detail">'
+      +'<div class="sa-detail-grid">'
+      +'<div class="sa-blocker"><div class="sa-dl">What\'s holding it back</div><ul class="sa-dlist">'+f.blockers.map(function(b){return'<li>'+b+'</li>';}).join('')+'</ul></div>'
+      +'<div class="sa-boost"><div class="sa-dl">How to improve it</div><ul class="sa-dlist">'+f.boosts.map(function(b){return'<li>'+b+'</li>';}).join('')+'</ul></div>'
+      +'</div></div>';
+    div.querySelector('.sa-factor-top').addEventListener('click',function(){
+      var wasOpen=div.classList.contains('open');
+      document.querySelectorAll('.sa-factor').forEach(function(d){d.classList.remove('open');});
+      if(!wasOpen)div.classList.add('open');
+    });
+    list.appendChild(div);
+  });
+})();
+</script>
+
+<!-- FOOTER -->
+<footer>
+  <div class="wrap">
+    <span class="logo">Liberia<em style="color:var(--gold);font-style:normal">Voice</em></span>
+    <p>The Pulse of Liberia, Worldwide &nbsp;·&nbsp; Revenue Strategy Document<br>
+    Built with Claude AI &nbsp;·&nbsp; <a href="#">liberiavoice.com</a> &nbsp;·&nbsp; 🇱🇷 For Liberians Everywhere</p>
+  </div>
+</footer>
+
+<script>
+const data = {
+  ngo:{
+    t:'NGO & development agency advertising',
+    b:'This is your single biggest opportunity in Year 1. Organizations like USAID, UNICEF, WHO, IRC, Carter Center, and NED all operate in Liberia with marketing and communications budgets. They need to reach educated, English-literate Liberians — exactly your audience. They pay in USD, on time, and at rates no Liberian business can match.',
+    s:['Build a simple media kit with page views, audience demographics, and social reach — Claude can write this in an hour','Email the communications director at 10 NGOs operating in Liberia and offer a sponsored article package at $300–$500','Offer sector spotlights — a sponsored Health edition co-branded with an NGO, or a sponsored Education column','Price banner ads at $100–$300/month and sponsored editorial pieces at $300–$500 each','Apply to be on NGO approved vendor lists — some orgs have formal media procurement processes that guarantee repeat business']
+  },
+  diaspora:{
+    t:'Diaspora business advertising',
+    b:'Liberian-owned businesses in the US, UK, and Europe desperately need to reach people back home and other diaspora members. A Liberian shipping company in New Jersey, a money transfer app, a Liberian restaurant in London, a Liberian real estate agent in Maryland — they all want your audience and cannot get it efficiently anywhere else.',
+    s:['Build a Diaspora Business section — become the go-to place for Liberian businesses to be seen by the homeland','Reach out directly in Liberian Facebook groups in the US, UK, and Germany to business owners','Offer a starter package: $150/month for a directory listing plus one sponsored social post','Target remittance services (WorldRemit, Sendwave) — they pay $10–25 per new customer you refer via affiliate links','Create an annual Top Liberian Diaspora Businesses feature — brands pay $200–$500 to be editorially profiled']
+  },
+  telecom:{
+    t:'Telecom & mobile money sponsorships',
+    b:'Lonestar Cell MTN, Orange Liberia, and mobile money platforms have the largest advertising budgets in Liberia by a wide margin. They sponsor radio and TV news programs — you offer something newer and more measurable. A single monthly partnership with one telecom covers all your operating costs.',
+    s:['Prepare a sponsorship deck — not just ad rates, offer brand integration and co-branded content','Approach marketing managers in Monrovia with a face-to-face pitch if possible — relationships are everything in Liberia','Offer to sponsor your WhatsApp daily digest: "Brought to you by Lonestar MTN" — easy to pitch, easy to deliver','Propose a Tech & Connectivity column sponsored by their brand — editorial alignment builds trust','Start with a 3-month pilot at discounted rates to prove ROI, then renew at full price']
+  },
+  govt:{
+    t:'Government public notices & paid announcements',
+    b:'The Government of Liberia, its ministries, autonomous agencies, and county authorities all publish legal notices, tender announcements, policy launches, and public awareness campaigns. Many are legally required to be in a recognized media outlet. You can become that outlet for digital-first government communications at a fraction of print rates.',
+    s:['Register LiberiaVoice as an official media outlet with LISGIS and the Ministry of Information','Contact procurement and communications offices at key ministries: Finance, Health, Education, Justice','Create a Public Notices section on the website — government-specific, credible, and easy to archive','Price per insertion: $150–$500 depending on size, urgency, and ministry budget','Offer monthly retainer packages for agencies that publish regularly — budget offices love predictable costs']
+  },
+  agency:{
+    t:'Content agency services',
+    b:'This is the hidden gem. Your AI-powered editorial infrastructure — letting a small team produce high-quality content at scale — is a sellable service. Small Liberian businesses, NGOs, politicians, and even other news outlets will pay you to manage their social media, write press releases, and produce reports. You are not just a magazine; you are a content studio.',
+    s:['Package clearly: Social Media Management $300/mo, Press Release Writing $75–150 each, Monthly Newsletter $150/mo','Approach political candidates — election cycles are extremely lucrative for content agencies in Liberia','Target Liberian nonprofits who need annual reports, donor updates, and grant proposals written for them','Use Claude to deliver in hours what a competitor takes days — your margins are enormous','Limit to 3–5 retainer clients so your editorial independence and reputation remain intact']
+  },
+  events:{
+    t:'Sponsored events & virtual summits',
+    b:'A single well-run event can generate more revenue than three months of advertising. A LiberiaVoice Business Summit — even virtual — sponsored by a telecom or bank, with 500 diaspora attendees at $15 each, generates $7,500 in one day. Pair that with a $2,000 lead sponsor and you clear $9,500 for one event that also builds your brand globally.',
+    s:['Start with a free virtual event to build the habit, the audience list, and your credibility','Event #2: charge $10–20 per ticket with one lead sponsor at $1,000–$2,000','High-selling themes: Investing in Liberia from the Diaspora, Women in Liberian Business, Liberia Tech Summit','Host quarterly — diaspora audiences are used to paying for quality Liberian community events online','Record and sell replays at $5 each, or offer them free to grow your email subscriber list']
+  },
+  jobs:{
+    t:'Jobs & tenders board',
+    b:'This is one of the most underestimated passive revenue streams in African digital media. Every NGO, embassy, UN agency, and corporate operating in Liberia advertises jobs and tenders. They currently scatter them on LinkedIn, their own sites, and email lists — missing thousands of qualified Liberian candidates. You become the authoritative platform.',
+    s:['Build a simple jobs page — even a Google Form submission to start, upgraded to a proper board in Month 2','Offer the first 30 listings free to NGOs and companies to seed the board and establish credibility','Charge $25–$75 per job listing and $50–$150 per tender notice going forward','Email HR managers at every INGO operating in Liberia on the first Monday of each month','At 30+ listings per month, you earn $750–$2,000 passively with near-zero editorial involvement']
+  },
+  directory:{
+    t:'Liberian business directory',
+    b:'Build the definitive trusted directory of Liberian businesses worldwide. Not just in Liberia — Liberian restaurants in Atlanta, lawyers in London, doctors in Minnesota, contractors in Frankfurt. Diaspora Liberians constantly search for their own community and find nothing organized. A trusted, verified directory fills a real need and generates recurring monthly listing revenue.',
+    s:['Launch with 100 free listings to seed the directory — use Claude to research and pre-fill basic info','Charge $10–$30/month for a verified, featured listing with photo, contact details, and location','Offer a Diaspora Business of the Month feature for $100 — editorial coverage plus directory plus social promotion','Partner with Liberian community organizations in the US and UK who can promote it to their members','At 200 paying listings averaging $15/month, that is $3,000/month recurring at near-zero marginal cost']
+  },
+  affiliate:{
+    t:'Affiliate & referral programs',
+    b:"This is money you earn without charging your audience a single dollar. You earn a commission from third-party companies when your readers click a link and take an action. The most powerful for LiberiaVoice: remittance services. Every diaspora Liberian sends money home. If they click your link to sign up for Wise, Sendwave, or WorldRemit, you earn $10–25 per new customer.",
+    s:['Sign up for Wise Affiliates, Sendwave referral program, and WorldRemit partner program — all completely free','Add affiliate links naturally to diaspora content: "Send money home safely — we recommend Sendwave (our affiliate link)"','Also join Amazon Associates, Coursera, and Udemy affiliate programs for education content sections','With 10K monthly readers and 1% conversion at $15 average commission, that is $1,500/month passively','Disclose affiliate relationships in your site privacy policy — transparency protects your credibility']
+  },
+  grants:{
+    t:'Journalism grants & press freedom funds',
+    b:'This is the most underutilized income stream for African digital media. Dozens of organizations specifically fund independent journalism in Sub-Saharan Africa, and Liberia-focused or West Africa outlets are a priority. These are not loans — they are grants that do not require repayment. One successful application can fund 6–12 months of full operations.',
+    s:['Google News Initiative (GNI) — funds African digital newsrooms directly at newsinitiative.withgoogle.com','Meta Journalism Project — grants specifically for community and local news organizations globally','International Center for Journalists (ICFJ) — fellowships and project funding for African reporters','National Endowment for Democracy (NED) — specifically funds independent media in West Africa','Use Claude to draft every application — high-quality, structured writing dramatically improves success rates']
+  },
+  whatsapp:{
+    t:'WhatsApp channel sponsorship',
+    b:'Your WhatsApp broadcast channel is one of the highest-value distribution assets you will build. Liberians trust and act on WhatsApp content more than any other platform. Once you have 5,000+ subscribers, you can charge a single sponsor per month to co-brand the daily digest. This is completely passive — you write the digest anyway, you just add one branded line.',
+    s:['Grow your channel aggressively in months 1–3 by sharing the link in every Liberian Facebook group and community','At 1,000 subscribers, approach sponsors informally with a pilot partnership offer at reduced rates','At 5,000 subscribers, launch formal sponsorship packages at $200–$500 per month','One sponsor per month only — keeps it clean and credible, avoids audience fatigue','Provide sponsors a monthly metrics report showing subscriber count, estimated opens, and forwards to justify renewal']
+  },
+  youtube:{
+    t:'YouTube AdSense & video monetization',
+    b:'YouTube automatically pays you once you qualify — no pitching, no clients, no invoicing. The key insight: diaspora viewers in the US and UK generate 10–20x more AdSense revenue per view than Liberia-based viewers. A video watched mainly by Liberians in Minnesota earns far more than the same video watched in Monrovia. Diaspora content is your highest-earning video category.',
+    s:['Open the channel now and start uploading before monetization qualifies — content ages into views over time','Focus early videos on diaspora topics: Sending money home, Visiting Liberia for the first time, Liberian culture explained','Qualify for monetization: 1,000 subscribers plus 4,000 watch hours — typically 6–12 months for a new channel','Repurpose every article as a short video using AI voice tools — minimal extra work for meaningful extra income','At 50K subscribers, YouTube alone generates $2,000–$5,000 per month in fully automated AdSense revenue']
+  }
+};
+
+function showDetail(key, panelId){
+  const d=data[key];if(!d)return;
+  const panel=document.getElementById(panelId);
+  document.getElementById(panelId+'-title').textContent=d.t;
+  document.getElementById(panelId+'-body').textContent=d.b;
+  const ul=document.getElementById(panelId+'-steps');
+  ul.innerHTML='';
+  d.s.forEach(s=>{
+    const li=document.createElement('li');
+    li.innerHTML='<span class="step-arrow">→</span>'+s;
+    ul.appendChild(li);
+  });
+  panel.classList.add('open');
+  setTimeout(()=>panel.scrollIntoView({behavior:'smooth',block:'nearest'}),50);
+}
+function closeDetail(id){document.getElementById(id).classList.remove('open')}
+</script>
+</body>
+</html>

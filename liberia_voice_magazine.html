@@ -1,0 +1,2467 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LiberiaVoice — The Pulse of Liberia, Worldwide</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --red: #bf1e2e;
+        --red-dark: #8b0000;
+        --blue: #003f87;
+        --blue-light: #1565c0;
+        --white: #fafaf8;
+        --off-white: #f4f1ec;
+        --cream: #ede8df;
+        --dark: #1a1208;
+        --mid: #3d3320;
+        --muted: #6b5f4a;
+        --accent: #d4a017;
+        --accent-light: #f5cc5c;
+        --green: #2e7d32;
+        --font-display: "Playfair Display", Georgia, serif;
+        --font-body: "DM Sans", sans-serif;
+        --max-w: 1200px;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: var(--font-body);
+        background: var(--white);
+        color: var(--dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+      }
+
+      /* ─── UTILITY ─── */
+      .container {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .section {
+        padding: 5rem 0;
+      }
+      .section--dark {
+        background: var(--dark);
+        color: var(--white);
+      }
+      .section--cream {
+        background: var(--cream);
+      }
+      .section--red {
+        background: var(--red);
+        color: var(--white);
+      }
+      .section--blue {
+        background: var(--blue);
+        color: var(--white);
+      }
+
+      .tag {
+        display: inline-block;
+        font-size: 0.65rem;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        padding: 0.25rem 0.7rem;
+        border-radius: 2px;
+        background: var(--red);
+        color: var(--white);
+      }
+      .tag--blue {
+        background: var(--blue);
+      }
+      .tag--gold {
+        background: var(--accent);
+        color: var(--dark);
+      }
+      .tag--green {
+        background: var(--green);
+        color: var(--white);
+      }
+      .tag--outline {
+        background: transparent;
+        border: 1px solid var(--red);
+        color: var(--red);
+      }
+
+      .eyebrow {
+        font-size: 0.7rem;
+        font-weight: 600;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--red);
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+      .eyebrow--white {
+        color: var(--accent-light);
+      }
+      .eyebrow--gold {
+        color: var(--accent);
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: var(--font-display);
+        line-height: 1.15;
+      }
+      h1 {
+        font-size: clamp(2.5rem, 6vw, 5rem);
+      }
+      h2 {
+        font-size: clamp(1.8rem, 4vw, 3rem);
+      }
+      h3 {
+        font-size: clamp(1.3rem, 2.5vw, 1.8rem);
+      }
+
+      .btn {
+        display: inline-block;
+        padding: 0.85rem 2rem;
+        font-family: var(--font-body);
+        font-weight: 600;
+        font-size: 0.85rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        border: none;
+        cursor: pointer;
+        transition: all 0.2s;
+      }
+      .btn--red {
+        background: var(--red);
+        color: var(--white);
+      }
+      .btn--red:hover {
+        background: var(--red-dark);
+      }
+      .btn--outline {
+        background: transparent;
+        border: 2px solid var(--white);
+        color: var(--white);
+      }
+      .btn--outline:hover {
+        background: var(--white);
+        color: var(--dark);
+      }
+      .btn--gold {
+        background: var(--accent);
+        color: var(--dark);
+      }
+      .btn--gold:hover {
+        background: var(--accent-light);
+      }
+      .btn--dark {
+        background: var(--dark);
+        color: var(--white);
+      }
+      .btn--dark:hover {
+        background: var(--mid);
+      }
+
+      /* ─── NAV ─── */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: var(--dark);
+        border-bottom: 3px solid var(--red);
+        padding: 0;
+      }
+      .nav-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1rem 1.5rem;
+        max-width: var(--max-w);
+        margin: 0 auto;
+      }
+      .logo {
+        font-family: var(--font-display);
+        font-size: 1.8rem;
+        font-weight: 900;
+        color: var(--white);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+      .logo span {
+        color: var(--accent);
+      }
+      .nav-tagline {
+        font-size: 0.6rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--muted);
+        display: block;
+        margin-top: -2px;
+      }
+      .nav-actions {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+      }
+      .nav-actions a {
+        color: var(--cream);
+        text-decoration: none;
+        font-size: 0.8rem;
+        font-weight: 500;
+        letter-spacing: 0.05em;
+        transition: color 0.2s;
+      }
+      .nav-actions a:hover {
+        color: var(--accent);
+      }
+      .nav-strip {
+        background: var(--red);
+        overflow-x: auto;
+        white-space: nowrap;
+        scrollbar-width: none;
+      }
+      .nav-strip::-webkit-scrollbar {
+        display: none;
+      }
+      .nav-strip-inner {
+        display: flex;
+        gap: 0;
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .nav-strip a {
+        display: inline-block;
+        padding: 0.55rem 1.1rem;
+        font-size: 0.72rem;
+        font-weight: 600;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.85);
+        transition: all 0.2s;
+        border-bottom: 3px solid transparent;
+      }
+      .nav-strip a:hover {
+        color: var(--white);
+        background: rgba(0, 0, 0, 0.15);
+      }
+
+      /* ─── HERO ─── */
+      .hero {
+        background: var(--dark);
+        color: var(--white);
+        padding: 5rem 0 4rem;
+        position: relative;
+        overflow: hidden;
+      }
+      .hero::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: repeating-linear-gradient(
+          -45deg,
+          transparent,
+          transparent 40px,
+          rgba(191, 30, 46, 0.04) 40px,
+          rgba(191, 30, 46, 0.04) 80px
+        );
+      }
+      .hero-flag {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        width: 45%;
+        background:
+          linear-gradient(90deg, var(--dark) 0%, transparent 40%),
+          repeating-horizontal-stripes;
+        opacity: 0.07;
+        background-image:
+          linear-gradient(90deg, var(--dark) 0%, transparent 50%),
+          repeating-linear-gradient(
+            180deg,
+            #bf1e2e 0,
+            #bf1e2e 10%,
+            #fff 10%,
+            #fff 20%,
+            #bf1e2e 20%,
+            #bf1e2e 30%,
+            #fff 30%,
+            #fff 40%,
+            #bf1e2e 40%,
+            #bf1e2e 50%,
+            #fff 50%,
+            #fff 60%,
+            #bf1e2e 60%,
+            #bf1e2e 70%,
+            #fff 70%,
+            #fff 80%,
+            #bf1e2e 80%,
+            #bf1e2e 90%,
+            #fff 90%,
+            #fff 100%
+          );
+      }
+      .hero-inner {
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+        position: relative;
+        z-index: 1;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        align-items: center;
+      }
+      .hero-kicker {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-bottom: 1.5rem;
+      }
+      .hero-kicker-line {
+        width: 40px;
+        height: 2px;
+        background: var(--red);
+      }
+      .hero-kicker-text {
+        font-size: 0.7rem;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--accent);
+      }
+      .hero h1 {
+        margin-bottom: 1.25rem;
+        font-weight: 900;
+      }
+      .hero h1 em {
+        color: var(--accent);
+        font-style: italic;
+      }
+      .hero-lead {
+        font-size: 1.05rem;
+        color: rgba(255, 255, 255, 0.7);
+        margin-bottom: 2rem;
+        line-height: 1.75;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 1rem;
+        flex-wrap: wrap;
+      }
+      .hero-stats {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+        margin-top: 1rem;
+      }
+      .hero-stat-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 1.5rem;
+        border-radius: 4px;
+        position: relative;
+      }
+      .hero-stat-card::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 3px;
+        background: var(--red);
+      }
+      .hero-stat-num {
+        font-family: var(--font-display);
+        font-size: 2.5rem;
+        font-weight: 900;
+        color: var(--accent);
+        line-height: 1;
+      }
+      .hero-stat-label {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 0.4rem;
+      }
+
+      /* ─── TICKER ─── */
+      .ticker {
+        background: var(--red);
+        padding: 0.6rem 0;
+        overflow: hidden;
+      }
+      .ticker-inner {
+        display: flex;
+        align-items: center;
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding: 0 1.5rem;
+      }
+      .ticker-label {
+        background: var(--dark);
+        color: var(--accent);
+        font-size: 0.65rem;
+        font-weight: 700;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        padding: 0.3rem 0.8rem;
+        margin-right: 1.5rem;
+        flex-shrink: 0;
+        border-radius: 2px;
+      }
+      .ticker-text {
+        font-size: 0.82rem;
+        color: rgba(255, 255, 255, 0.9);
+        font-weight: 500;
+      }
+
+      /* ─── FEATURED GRID ─── */
+      .featured-grid {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        grid-template-rows: auto auto;
+        gap: 1.5px;
+        background: var(--cream);
+      }
+      .article-card {
+        background: var(--white);
+        padding: 2rem;
+        transition: all 0.2s;
+        position: relative;
+      }
+      .article-card:hover {
+        background: var(--off-white);
+      }
+      .article-card--hero {
+        grid-row: 1 / 3;
+        padding: 2.5rem;
+      }
+      .article-card--stack {
+      }
+
+      .article-card .cat {
+        margin-bottom: 0.75rem;
+      }
+      .article-card h3 {
+        font-weight: 700;
+        margin-bottom: 0.75rem;
+      }
+      .article-card h3 a {
+        color: var(--dark);
+        text-decoration: none;
+      }
+      .article-card h3 a:hover {
+        color: var(--red);
+      }
+      .article-card p {
+        font-size: 0.9rem;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+      .article-card .meta {
+        display: flex;
+        gap: 1rem;
+        align-items: center;
+        margin-top: 1.25rem;
+        font-size: 0.75rem;
+        color: var(--muted);
+        border-top: 1px solid var(--cream);
+        padding-top: 1rem;
+      }
+      .author-dot {
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        background: var(--red);
+        color: var(--white);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 0.65rem;
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* ─── SECTIONS GRID ─── */
+      .section-title {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid var(--dark);
+        padding-bottom: 0.75rem;
+      }
+      .section-title h2 {
+        font-size: 1.4rem;
+        font-weight: 700;
+      }
+      .section-title a {
+        font-size: 0.75rem;
+        color: var(--red);
+        text-decoration: none;
+        font-weight: 600;
+        letter-spacing: 0.05em;
+      }
+
+      .cards-3 {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .cards-4 {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+      }
+
+      .mini-card {
+        border-top: 3px solid var(--red);
+        padding-top: 1rem;
+      }
+      .mini-card .tag {
+        margin-bottom: 0.5rem;
+      }
+      .mini-card h4 {
+        font-family: var(--font-display);
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+      .mini-card h4 a {
+        color: var(--dark);
+        text-decoration: none;
+      }
+      .mini-card h4 a:hover {
+        color: var(--red);
+      }
+      .mini-card p {
+        font-size: 0.8rem;
+        color: var(--muted);
+        line-height: 1.55;
+      }
+      .mini-card .meta {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-top: 0.75rem;
+      }
+
+      /* ─── BUSINESS MODEL / SUCCESS ─── */
+      .pillar-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1.5rem;
+      }
+      .pillar-card {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        padding: 2rem;
+        border-radius: 4px;
+        border-top: 3px solid var(--accent);
+      }
+      .pillar-icon {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+        display: block;
+      }
+      .pillar-card h3 {
+        font-size: 1.1rem;
+        color: var(--white);
+        margin-bottom: 0.75rem;
+      }
+      .pillar-card p {
+        font-size: 0.85rem;
+        color: rgba(255, 255, 255, 0.6);
+        line-height: 1.65;
+      }
+      .pillar-card ul {
+        list-style: none;
+        margin-top: 0.75rem;
+      }
+      .pillar-card ul li {
+        font-size: 0.8rem;
+        color: rgba(255, 255, 255, 0.6);
+        padding: 0.2rem 0;
+      }
+      .pillar-card ul li::before {
+        content: "→ ";
+        color: var(--accent);
+      }
+
+      /* ─── 90-DAY PLAN ─── */
+      .phase-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+      }
+      .phase-card {
+        position: relative;
+        padding: 2rem;
+        background: var(--white);
+        border: 1px solid var(--cream);
+        border-radius: 4px;
+      }
+      .phase-num {
+        font-family: var(--font-display);
+        font-size: 5rem;
+        font-weight: 900;
+        position: absolute;
+        top: -1.5rem;
+        right: 1rem;
+        color: var(--cream);
+        line-height: 1;
+        z-index: 0;
+        pointer-events: none;
+      }
+      .phase-card > * {
+        position: relative;
+        z-index: 1;
+      }
+      .phase-period {
+        font-size: 0.65rem;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        color: var(--red);
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+      }
+      .phase-card h3 {
+        font-size: 1.15rem;
+        margin-bottom: 1rem;
+      }
+      .phase-card ul {
+        list-style: none;
+      }
+      .phase-card ul li {
+        font-size: 0.82rem;
+        color: var(--muted);
+        padding: 0.35rem 0;
+        border-bottom: 1px dashed var(--cream);
+        display: flex;
+        gap: 0.5rem;
+        align-items: flex-start;
+      }
+      .phase-card ul li::before {
+        content: "✓";
+        color: var(--green);
+        font-weight: 700;
+        flex-shrink: 0;
+      }
+
+      /* ─── SOCIAL MEDIA STRATEGY ─── */
+      .platform-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 1rem;
+      }
+      .platform-card {
+        padding: 1.5rem 1rem;
+        text-align: center;
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        border-radius: 4px;
+        transition: all 0.2s;
+      }
+      .platform-card:hover {
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .platform-icon {
+        font-size: 2rem;
+        margin-bottom: 0.75rem;
+      }
+      .platform-card h4 {
+        font-size: 0.85rem;
+        color: var(--white);
+        margin-bottom: 0.4rem;
+      }
+      .platform-card p {
+        font-size: 0.72rem;
+        color: rgba(255, 255, 255, 0.5);
+      }
+
+      /* ─── CLAUDE PARTNERSHIP ─── */
+      .claude-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1.5rem;
+      }
+      .claude-item {
+        display: flex;
+        gap: 1rem;
+        align-items: flex-start;
+        padding: 1.5rem;
+        background: var(--white);
+        border: 1px solid var(--cream);
+        border-left: 4px solid var(--blue);
+        border-radius: 0 4px 4px 0;
+      }
+      .claude-num {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--blue-light);
+        line-height: 1;
+        flex-shrink: 0;
+        width: 2.5rem;
+      }
+      .claude-item h4 {
+        font-size: 1rem;
+        margin-bottom: 0.4rem;
+      }
+      .claude-item p {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+
+      /* ─── SUCCESS ASSESSMENT (interactive) ─── */
+      .sa-top {
+        display: grid;
+        grid-template-columns: 200px 1fr;
+        gap: 2rem;
+        align-items: start;
+        margin-bottom: 2rem;
+      }
+      .sa-ring-wrap {
+        position: relative;
+        width: 160px;
+        height: 160px;
+        margin: 0 auto 0.75rem;
+      }
+      .sa-ring-wrap svg {
+        transform: rotate(-90deg);
+      }
+      .sa-ring-center {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+      .sa-ring-num {
+        font-family: var(--font-display);
+        font-size: 2.2rem;
+        font-weight: 900;
+        color: var(--dark);
+        line-height: 1;
+      }
+      .sa-ring-lbl {
+        font-size: 0.65rem;
+        color: var(--muted);
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-top: 3px;
+      }
+      .sa-ring-verdict {
+        font-size: 0.75rem;
+        color: var(--muted);
+        text-align: center;
+        margin-top: 0.5rem;
+      }
+      .sa-metrics {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+      }
+      .sa-metric {
+        background: var(--off-white);
+        border-radius: 4px;
+        padding: 0.75rem 1rem;
+        border: 1px solid var(--cream);
+      }
+      .sa-metric-label {
+        font-size: 0.68rem;
+        color: var(--muted);
+        margin-bottom: 4px;
+        text-transform: uppercase;
+        letter-spacing: 0.07em;
+      }
+      .sa-metric-val {
+        font-family: var(--font-display);
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--dark);
+      }
+      .sa-metric-sub {
+        font-size: 0.68rem;
+        color: var(--muted);
+      }
+      .sa-factor-lbl {
+        font-size: 0.62rem;
+        font-weight: 600;
+        letter-spacing: 0.15em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 1rem;
+      }
+      .sa-factor {
+        background: var(--white);
+        border: 1px solid var(--cream);
+        border-radius: 4px;
+        padding: 1rem 1.25rem;
+        margin-bottom: 10px;
+        cursor: pointer;
+        transition: border-color 0.2s;
+      }
+      .sa-factor:hover,
+      .sa-factor.open {
+        border-color: var(--muted);
+      }
+      .sa-factor-top {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .sa-factor-name {
+        flex: 1;
+        font-size: 0.88rem;
+        font-weight: 500;
+        color: var(--dark);
+      }
+      .sa-factor-score-wrap {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .sa-bar-outer {
+        width: 100px;
+        height: 5px;
+        background: var(--cream);
+        border-radius: 3px;
+        overflow: hidden;
+      }
+      .sa-bar-inner {
+        height: 100%;
+        border-radius: 3px;
+        transition: width 0.4s ease;
+      }
+      .sa-pct {
+        font-size: 0.82rem;
+        font-weight: 700;
+        width: 34px;
+        text-align: right;
+      }
+      .sa-chevron {
+        font-size: 0.8rem;
+        color: var(--muted);
+        transition: transform 0.2s;
+      }
+      .sa-factor.open .sa-chevron {
+        transform: rotate(180deg);
+      }
+      .sa-detail {
+        display: none;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--cream);
+      }
+      .sa-factor.open .sa-detail {
+        display: block;
+      }
+      .sa-detail-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+      }
+      .sa-blocker {
+        background: #fdf0f0;
+        border: 1px solid #f5cece;
+        border-radius: 4px;
+        padding: 0.75rem 1rem;
+      }
+      .sa-boost {
+        background: #f0faf4;
+        border: 1px solid #b8dfca;
+        border-radius: 4px;
+        padding: 0.75rem 1rem;
+      }
+      .sa-dl {
+        font-size: 0.62rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        margin-bottom: 6px;
+      }
+      .sa-blocker .sa-dl {
+        color: #a32d2d;
+      }
+      .sa-boost .sa-dl {
+        color: var(--green);
+      }
+      .sa-dlist {
+        list-style: none;
+      }
+      .sa-dlist li {
+        font-size: 0.78rem;
+        color: var(--ink2, var(--mid));
+        padding: 3px 0;
+        line-height: 1.5;
+        display: flex;
+        gap: 6px;
+      }
+      .sa-dlist li::before {
+        flex-shrink: 0;
+        font-size: 0.7rem;
+        margin-top: 2px;
+      }
+      .sa-blocker .sa-dlist li::before {
+        content: "×";
+        color: #a32d2d;
+        font-weight: 700;
+      }
+      .sa-boost .sa-dlist li::before {
+        content: "↑";
+        color: var(--green);
+        font-weight: 700;
+      }
+      .sa-ask-btn {
+        margin-top: 0.75rem;
+        font-size: 0.75rem;
+        background: var(--off-white);
+        color: var(--blue);
+        border: 1px solid var(--cream);
+        border-radius: 3px;
+        padding: 6px 14px;
+        cursor: pointer;
+        font-family: var(--font-body);
+        transition: background 0.2s;
+      }
+      .sa-ask-btn:hover {
+        background: var(--cream);
+      }
+      .sa-overall {
+        margin-top: 1.5rem;
+        background: var(--off-white);
+        border-radius: 4px;
+        padding: 1.25rem 1.5rem;
+        border-left: 4px solid var(--green);
+      }
+      .sa-overall-title {
+        font-size: 0.88rem;
+        font-weight: 600;
+        color: var(--dark);
+        margin-bottom: 6px;
+      }
+      .sa-overall-body {
+        font-size: 0.82rem;
+        color: var(--muted);
+        line-height: 1.7;
+      }
+      @media (max-width: 700px) {
+        .sa-top {
+          grid-template-columns: 1fr;
+        }
+        .sa-detail-grid {
+          grid-template-columns: 1fr;
+        }
+      }
+
+      /* ─── SUBSCRIBE ─── */
+      .subscribe-box {
+        max-width: 580px;
+        margin: 0 auto;
+        text-align: center;
+        padding: 0 1.5rem;
+      }
+      .subscribe-form {
+        display: flex;
+        gap: 0;
+        margin-top: 1.5rem;
+      }
+      .subscribe-form input {
+        flex: 1;
+        padding: 0.85rem 1.25rem;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        background: rgba(255, 255, 255, 0.1);
+        color: var(--white);
+        font-family: var(--font-body);
+        font-size: 0.9rem;
+        outline: none;
+        border-radius: 0;
+      }
+      .subscribe-form input::placeholder {
+        color: rgba(255, 255, 255, 0.4);
+      }
+      .subscribe-form button {
+        padding: 0.85rem 1.5rem;
+        background: var(--accent);
+        color: var(--dark);
+        font-weight: 700;
+        font-size: 0.8rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        border: none;
+        cursor: pointer;
+        font-family: var(--font-body);
+      }
+
+      /* ─── FOOTER ─── */
+      footer {
+        background: #0d0a05;
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .footer-top {
+        padding: 4rem 0 3rem;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr 1fr;
+        gap: 3rem;
+        max-width: var(--max-w);
+        margin: 0 auto;
+        padding-left: 1.5rem;
+        padding-right: 1.5rem;
+      }
+      .footer-logo {
+        font-family: var(--font-display);
+        font-size: 2rem;
+        font-weight: 900;
+        color: var(--white);
+        margin-bottom: 0.75rem;
+        display: block;
+      }
+      .footer-logo span {
+        color: var(--accent);
+      }
+      .footer-desc {
+        font-size: 0.82rem;
+        line-height: 1.7;
+        margin-bottom: 1.25rem;
+      }
+      .footer-col h5 {
+        font-family: var(--font-display);
+        color: var(--white);
+        font-size: 0.9rem;
+        margin-bottom: 1rem;
+        font-weight: 700;
+        letter-spacing: 0.05em;
+      }
+      .footer-col ul {
+        list-style: none;
+      }
+      .footer-col ul li {
+        margin-bottom: 0.5rem;
+      }
+      .footer-col ul li a {
+        color: rgba(255, 255, 255, 0.5);
+        text-decoration: none;
+        font-size: 0.82rem;
+        transition: color 0.2s;
+      }
+      .footer-col ul li a:hover {
+        color: var(--accent);
+      }
+      .footer-bottom {
+        border-top: 1px solid rgba(255, 255, 255, 0.07);
+        padding: 1.25rem 1.5rem;
+        max-width: var(--max-w);
+        margin: 0 auto;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 0.75rem;
+      }
+      .flag-stripe {
+        display: flex;
+        height: 6px;
+        width: 100%;
+      }
+      .stripe {
+        flex: 1;
+      }
+      .stripe--red {
+        background: var(--red);
+      }
+      .stripe--white {
+        background: var(--white);
+      }
+
+      /* ─── LIBERIA FLAG COLORS TOP BAR ─── */
+      .flag-bar {
+        display: grid;
+        grid-template-columns: repeat(11, 1fr);
+        height: 8px;
+      }
+      .fb {
+      }
+      .fb-r {
+        background: #bf1e2e;
+      }
+      .fb-w {
+        background: #ffffff;
+      }
+      .fb-b {
+        background: #003f87;
+      }
+
+      /* ─── RESPONSIVE ─── */
+      @media (max-width: 900px) {
+        .hero-inner {
+          grid-template-columns: 1fr;
+          gap: 2.5rem;
+        }
+        .featured-grid {
+          grid-template-columns: 1fr;
+        }
+        .article-card--hero {
+          grid-row: auto;
+        }
+        .cards-3 {
+          grid-template-columns: 1fr 1fr;
+        }
+        .cards-4 {
+          grid-template-columns: 1fr 1fr;
+        }
+        .pillar-grid {
+          grid-template-columns: 1fr;
+        }
+        .phase-grid {
+          grid-template-columns: 1fr;
+        }
+        .claude-grid {
+          grid-template-columns: 1fr;
+        }
+        .assess-grid {
+          grid-template-columns: 1fr;
+        }
+        .platform-grid {
+          grid-template-columns: repeat(3, 1fr);
+        }
+        .footer-top {
+          grid-template-columns: 1fr 1fr;
+        }
+        .nav-actions {
+          display: none;
+        }
+      }
+
+      @media (max-width: 600px) {
+        .cards-3 {
+          grid-template-columns: 1fr;
+        }
+        .cards-4 {
+          grid-template-columns: 1fr;
+        }
+        .platform-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .footer-top {
+          grid-template-columns: 1fr;
+        }
+        .hero-stats {
+          grid-template-columns: 1fr 1fr;
+        }
+        h1 {
+          font-size: 2.2rem;
+        }
+        .section {
+          padding: 3rem 0;
+        }
+        .subscribe-form {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Liberia Flag Color Bar -->
+    <div class="flag-bar">
+      <div class="fb fb-r"></div>
+      <div class="fb fb-w"></div>
+      <div class="fb fb-r"></div>
+      <div class="fb fb-w"></div>
+      <div class="fb fb-r"></div>
+      <div class="fb fb-b"></div>
+      <div class="fb fb-r"></div>
+      <div class="fb fb-w"></div>
+      <div class="fb fb-r"></div>
+      <div class="fb fb-w"></div>
+      <div class="fb fb-r"></div>
+    </div>
+
+    <!-- NAV -->
+    <nav>
+      <div class="nav-top">
+        <a href="#" class="logo"
+          >Liberia<span>Voice</span>
+          <span class="nav-tagline">The Pulse of Liberia, Worldwide</span>
+        </a>
+        <div class="nav-actions">
+          <a href="#subscribe">Subscribe</a>
+          <a href="#about">About</a>
+          <a
+            href="liberiavoice_revenue_strategy.html"
+            class="btn btn--red"
+            style="padding: 0.5rem 1.2rem; font-size: 0.72rem"
+            >Strategy</a
+          >
+        </div>
+      </div>
+      <div class="nav-strip">
+        <div class="nav-strip-inner">
+          <a href="#sectors">Education</a>
+          <a href="#sectors">Politics</a>
+          <a href="#sectors">Agriculture</a>
+          <a href="#sectors">Sports</a>
+          <a href="#sectors">Music</a>
+          <a href="#sectors">Influencers</a>
+          <a href="#sectors">Charities</a>
+          <a href="#sectors">Business</a>
+          <a href="#sectors">Culture</a>
+          <a href="#sectors">Diaspora</a>
+          <a href="#sectors">Technology</a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-inner">
+        <div>
+          <div class="hero-kicker">
+            <div class="hero-kicker-line"></div>
+            <span class="hero-kicker-text"
+              >Launching 2025 · Liberia's Digital Magazine</span
+            >
+          </div>
+          <h1>The <em>Voice</em> Every Liberian Has Been Waiting For</h1>
+          <p class="hero-lead">
+            LiberiaVoice is Liberia's premier digital magazine — covering
+            education, politics, agriculture, sports, music, business, culture,
+            the diaspora, and technology. Built for Liberians at home and
+            worldwide, aged 18–60.
+          </p>
+          <div class="hero-btns">
+            <a href="#subscribe" class="btn btn--red">Get Early Access</a>
+            <a href="#plan" class="btn btn--outline">See Our Plan</a>
+          </div>
+        </div>
+        <div>
+          <div class="hero-stats">
+            <div class="hero-stat-card">
+              <div class="hero-stat-num">5.3M</div>
+              <div class="hero-stat-label">Liberians at home</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-num">1M+</div>
+              <div class="hero-stat-label">Diaspora worldwide</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-num">11</div>
+              <div class="hero-stat-label">Content sectors</div>
+            </div>
+            <div class="hero-stat-card">
+              <div class="hero-stat-num">78%</div>
+              <div class="hero-stat-label">Success forecast</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TICKER -->
+    <div class="ticker">
+      <div class="ticker-inner">
+        <span class="ticker-label">Breaking</span>
+        <span class="ticker-text"
+          >🇱🇷 LiberiaVoice launches soon — covering all 11 sectors of Liberian
+          life, politics, culture and diaspora &nbsp;•&nbsp; Pre-register now to
+          get first-mover content &nbsp;•&nbsp; AI-powered. Human-edited.
+          Liberian at heart.</span
+        >
+      </div>
+    </div>
+
+    <!-- FEATURED ARTICLES (SAMPLE) -->
+    <section class="section" id="sectors">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Stories</h2>
+          <a href="#">View all →</a>
+        </div>
+        <div class="featured-grid">
+          <div class="article-card article-card--hero">
+            <span class="tag">Politics</span>
+            <h3 style="font-size: 1.9rem; margin-top: 0.75rem">
+              <a href="#"
+                >Liberia at the Crossroads: How the Next Generation is Rewriting
+                the Nation's Political Future</a
+              >
+            </h3>
+            <p style="margin-top: 0.75rem">
+              Young Liberians under 35 now make up the majority of registered
+              voters. From Monrovia to the diaspora communities in Minnesota, a
+              new political consciousness is rising — and LiberiaVoice is here
+              to chronicle every step.
+            </p>
+            <div class="meta">
+              <div class="author-dot">JK</div>
+              <span>James Kollie · Editor-in-Chief</span>
+              <span style="margin-left: auto">June 12, 2025</span>
+            </div>
+          </div>
+          <div class="article-card article-card--stack">
+            <span class="tag tag--blue">Business</span>
+            <h3 style="font-size: 1.1rem">
+              <a href="#"
+                >Liberia's Startup Boom: 10 Founders Changing the Economy From
+                the Ground Up</a
+              >
+            </h3>
+            <p style="font-size: 0.83rem; margin-top: 0.5rem">
+              From fintech to agribusiness, a new class of Liberian
+              entrepreneurs is building the future without waiting for
+              permission.
+            </p>
+            <div class="meta">
+              <div class="author-dot" style="background: var(--blue)">AM</div>
+              <span>Abena Morris</span>
+              <span style="margin-left: auto">June 10, 2025</span>
+            </div>
+          </div>
+          <div class="article-card article-card--stack">
+            <span class="tag tag--green">Agriculture</span>
+            <h3 style="font-size: 1.1rem">
+              <a href="#"
+                >Rice, Rubber and Revolution: How Smallholder Farmers Are Using
+                Tech to Beat the Market</a
+              >
+            </h3>
+            <p style="font-size: 0.83rem; margin-top: 0.5rem">
+              Mobile apps and solar-powered irrigation are reshaping Liberian
+              agriculture in ways that international NGOs missed.
+            </p>
+            <div class="meta">
+              <div class="author-dot" style="background: var(--green)">PW</div>
+              <span>Princess Wleh</span>
+              <span style="margin-left: auto">June 8, 2025</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- RECENT ACROSS SECTORS -->
+    <section class="section section--cream">
+      <div class="container">
+        <div class="section-title">
+          <h2>Across All Sectors</h2>
+          <a href="#">See all stories →</a>
+        </div>
+        <div class="cards-4">
+          <div class="mini-card">
+            <span class="tag">Sports</span>
+            <h4>
+              <a href="#"
+                >Liberia FC's Path to AFCON: Can the Lone Stars Finally
+                Qualify?</a
+              >
+            </h4>
+            <p>
+              After years of near-misses, a new coaching setup and homegrown
+              talent are raising hopes across the nation.
+            </p>
+            <div class="meta">Sports Desk · June 2025</div>
+          </div>
+          <div class="mini-card">
+            <span class="tag tag--gold" style="color: var(--dark)">Music</span>
+            <h4>
+              <a href="#"
+                >Afrobeats Meets Liberian Highlife: The Artists Fusing Cultures
+                and Going Viral</a
+              >
+            </h4>
+            <p>
+              From Monrovia's studios to London's streaming charts, Liberian
+              sound is having a global moment.
+            </p>
+            <div class="meta">Culture Desk · June 2025</div>
+          </div>
+          <div class="mini-card">
+            <span class="tag tag--blue">Diaspora</span>
+            <h4>
+              <a href="#"
+                >The Remittance Economy: How Liberian Americans are Funding
+                Education Back Home</a
+              >
+            </h4>
+            <p>
+              In 2024, diaspora remittances to Liberia exceeded $700 million.
+              Here's where the money is really going.
+            </p>
+            <div class="meta">Diaspora Desk · June 2025</div>
+          </div>
+          <div class="mini-card">
+            <span class="tag">Education</span>
+            <h4>
+              <a href="#"
+                >Inside Liberia's School Turnaround: WAEC Scores Rise for the
+                Third Straight Year</a
+              >
+            </h4>
+            <p>
+              Data from the Ministry of Education shows a consistent
+              improvement, but systemic gaps remain urgent.
+            </p>
+            <div class="meta">Education Desk · June 2025</div>
+          </div>
+        </div>
+        <br /><br />
+        <div class="cards-4" style="margin-top: 0.5rem">
+          <div class="mini-card">
+            <span class="tag">Charities</span>
+            <h4>
+              <a href="#"
+                >The NGOs Actually Making a Difference — And the Ones That
+                Aren't</a
+              >
+            </h4>
+            <p>
+              LiberiaVoice investigates which charities operating in Liberia
+              deliver results and which ones are performance theater.
+            </p>
+            <div class="meta">Investigations · June 2025</div>
+          </div>
+          <div class="mini-card">
+            <span class="tag">Culture</span>
+            <h4>
+              <a href="#"
+                >Liberian Fashion Week Goes Global: Designers Taking Their
+                Heritage to Paris Runways</a
+              >
+            </h4>
+            <p>
+              Three Liberian designers just debuted at international fashion
+              weeks. Meet the movement redefining African luxury.
+            </p>
+            <div class="meta">Style · June 2025</div>
+          </div>
+          <div class="mini-card">
+            <span class="tag tag--blue">Technology</span>
+            <h4>
+              <a href="#"
+                >Fiber Optic Liberia: The Infrastructure Revolution That Will
+                Change Everything</a
+              >
+            </h4>
+            <p>
+              A $200M fiber rollout is quietly starting. LiberiaVoice breaks
+              down what it means for connectivity and business.
+            </p>
+            <div class="meta">Tech Desk · June 2025</div>
+          </div>
+          <div class="mini-card">
+            <span class="tag tag--gold" style="color: var(--dark)"
+              >Influencers</span
+            >
+            <h4>
+              <a href="#"
+                >From TikTok to Monrovia: Meet the Liberian Creators Building
+                Million-Follow Audiences</a
+              >
+            </h4>
+            <p>
+              A new class of Liberian social media creators is turning cultural
+              pride into powerful online platforms.
+            </p>
+            <div class="meta">Influencers · June 2025</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUCCESS ASSESSMENT (interactive) -->
+    <section class="section" id="success">
+      <div class="container">
+        <span class="eyebrow">Strategic Analysis</span>
+        <h2 style="margin-bottom: 2rem">
+          Success Assessment in the Age of AI &amp; Social Media
+        </h2>
+
+        <div class="sa-top">
+          <div style="text-align: center">
+            <div class="sa-ring-wrap">
+              <svg width="160" height="160" viewBox="0 0 160 160">
+                <circle
+                  cx="80"
+                  cy="80"
+                  r="68"
+                  fill="none"
+                  stroke="var(--cream)"
+                  stroke-width="10"
+                />
+                <circle
+                  id="sa-ring"
+                  cx="80"
+                  cy="80"
+                  r="68"
+                  fill="none"
+                  stroke="#2E7D32"
+                  stroke-width="10"
+                  stroke-dasharray="427.26"
+                  stroke-dashoffset="427.26"
+                  stroke-linecap="round"
+                  style="
+                    transition:
+                      stroke-dashoffset 1.2s ease,
+                      stroke 0.4s;
+                  "
+                />
+              </svg>
+              <div class="sa-ring-center">
+                <span class="sa-ring-num" id="sa-num">—</span>
+                <span class="sa-ring-lbl">overall score</span>
+              </div>
+            </div>
+            <div class="sa-ring-verdict" id="sa-verdict"></div>
+          </div>
+          <div class="sa-metrics">
+            <div class="sa-metric">
+              <div class="sa-metric-label">Highest factor</div>
+              <div class="sa-metric-val" id="sa-high">—</div>
+              <div class="sa-metric-sub" id="sa-high-name"></div>
+            </div>
+            <div class="sa-metric">
+              <div class="sa-metric-label">Weakest factor</div>
+              <div class="sa-metric-val" id="sa-low">—</div>
+              <div class="sa-metric-sub" id="sa-low-name"></div>
+            </div>
+            <div class="sa-metric">
+              <div class="sa-metric-label">Quick-win potential</div>
+              <div class="sa-metric-val" id="sa-gain">—</div>
+              <div class="sa-metric-sub">pts improvable in 90 days</div>
+            </div>
+            <div class="sa-metric">
+              <div class="sa-metric-label">Factors above 70%</div>
+              <div class="sa-metric-val" id="sa-strong">—</div>
+              <div class="sa-metric-sub">of 8 total factors</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="sa-factor-lbl">
+          Click any factor to see what's blocking it and how to improve
+        </div>
+        <div id="sa-factors"></div>
+
+        <div class="sa-overall" id="sa-overall">
+          <div class="sa-overall-title" id="sa-ot"></div>
+          <div class="sa-overall-body" id="sa-ob"></div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      (function () {
+        var factors = [
+          {
+            name: "Niche audience clarity",
+            score: 90,
+            qw: 5,
+            blockers: [
+              "No registered brand or legal entity yet",
+              "Audience segments not formally profiled",
+            ],
+            boosts: [
+              "Register LiberiaVoice as a brand and media entity immediately",
+              "Create 3 audience personas: home Liberian, diaspora US/UK, diaspora West Africa",
+              "Build a pre-launch waitlist to validate demand before spending",
+            ],
+          },
+          {
+            name: "Diaspora digital engagement",
+            score: 85,
+            qw: 8,
+            blockers: [
+              "No presence in existing Liberian diaspora Facebook groups yet",
+              "No relationships with diaspora community organizations",
+              "Diaspora content not yet differentiated from home content",
+            ],
+            boosts: [
+              "Join and post in top 20 Liberian diaspora Facebook groups in US, UK, Germany",
+              "Partner with ULAA and Liberian community associations as distribution allies",
+              "Create a dedicated Diaspora section with its own tone and editorial focus",
+            ],
+          },
+          {
+            name: "Smartphone & internet access",
+            score: 68,
+            qw: 10,
+            blockers: [
+              "Domestic internet is expensive and slow in rural Liberia",
+              "High data costs mean users avoid heavy image/video sites",
+              "Electricity reliability limits device uptime",
+            ],
+            boosts: [
+              "Build a lightweight mobile-first site — pages under 200KB",
+              "Make WhatsApp your primary domestic distribution channel",
+              "Offer a text-only reading mode and low-data newsletter version",
+              "Pursue a zero-rated data deal with Lonestar or Orange",
+            ],
+          },
+          {
+            name: "AI content production advantage",
+            score: 82,
+            qw: 12,
+            blockers: [
+              "No documented AI editorial workflow yet",
+              "Risk of publishing AI errors without a human review gate",
+              "Competitors may adopt the same tools quickly",
+            ],
+            boosts: [
+              "Document a 3-step workflow: Claude drafts → editor verifies → editor publishes",
+              "Build a Claude prompt library for each of the 11 content sectors",
+              "Use AI for research and structure; human voice must be in every final piece",
+              "Train 2–3 Liberian contributor-editors who understand local context",
+            ],
+          },
+          {
+            name: "Social media distribution reach",
+            score: 55,
+            qw: 20,
+            blockers: [
+              "Zero followers on any platform — starting from scratch",
+              "No content calendar or posting consistency plan",
+              "No influencer relationships established yet",
+            ],
+            boosts: [
+              "Launch all 5 platforms on the same day: Facebook, Instagram, TikTok, X, WhatsApp",
+              "Post daily on Facebook and TikTok for the first 90 days",
+              "Partner with 10 Liberian influencers with 5K+ followers",
+              'Run a launch challenge: "Tag a Liberian who needs to see this"',
+            ],
+          },
+          {
+            name: "Advertiser & NGO market readiness",
+            score: 60,
+            qw: 18,
+            blockers: [
+              "No media kit or advertiser pitch materials exist yet",
+              "No relationships with NGO communications directors",
+              "Domestic Liberian ad market is small and relationship-driven",
+            ],
+            boosts: [
+              "Build a media kit with projected audience figures — Claude writes it in an hour",
+              "Email 20 NGO communications directors in Liberia this month",
+              "Create a 3-month pilot package at 50% discount to win first three advertisers",
+              "Apply for Google News Initiative funding for an independent revenue runway",
+            ],
+          },
+          {
+            name: "Editorial credibility & trust",
+            score: 52,
+            qw: 22,
+            blockers: [
+              "No published editorial policy or ethics statement yet",
+              "Unknown brand with zero existing credibility signals",
+              "AI-generated content risks being dismissed as low quality",
+            ],
+            boosts: [
+              "Publish an editorial policy on Day 1 with fact-checking and AI disclosure standards",
+              "Recruit one well-known Liberian journalist as Editor-in-Chief or advisory board member",
+              "Launch with 3 deeply reported original investigations — quality builds credibility faster than volume",
+              "Apply for membership in WAJA and MFWA journalism networks",
+            ],
+          },
+          {
+            name: "Revenue diversification readiness",
+            score: 45,
+            qw: 25,
+            blockers: [
+              "No revenue streams are operational yet",
+              "No affiliate accounts registered",
+              "No grant applications submitted",
+              "No jobs board or directory infrastructure built",
+            ],
+            boosts: [
+              "Register for Sendwave, Wise, and WorldRemit affiliate programs this week — free, 30 minutes",
+              "Apply to Google News Initiative in Month 1 — deadlines are fixed",
+              "Build a basic jobs board in Month 2 and seed it with free listings",
+              "Identify 5 content agency clients before launch — sell the service before building infrastructure",
+            ],
+          },
+        ];
+        function barColor(s) {
+          return s >= 75 ? "#2E7D32" : s >= 55 ? "#C8920A" : "#BF1E2E";
+        }
+        function verdict(s) {
+          if (s >= 80) return "Strong foundation — optimize and scale";
+          if (s >= 65) return "Good base — targeted improvements needed";
+          if (s >= 50) return "Viable — significant gaps to close";
+          return "Early stage — foundational work required";
+        }
+        var avg = Math.round(
+          factors.reduce(function (a, f) {
+            return a + f.score;
+          }, 0) / factors.length,
+        );
+        var circ = 427.26;
+        var ring = document.getElementById("sa-ring");
+        setTimeout(function () {
+          ring.style.strokeDashoffset = circ * (1 - avg / 100);
+          ring.style.stroke = barColor(avg);
+        }, 150);
+        document.getElementById("sa-num").textContent = avg + "%";
+        document.getElementById("sa-verdict").textContent = verdict(avg);
+        var sorted = factors.slice().sort(function (a, b) {
+          return b.score - a.score;
+        });
+        document.getElementById("sa-high").textContent = sorted[0].score + "%";
+        document.getElementById("sa-high-name").textContent = sorted[0].name;
+        document.getElementById("sa-low").textContent =
+          sorted[sorted.length - 1].score + "%";
+        document.getElementById("sa-low-name").textContent =
+          sorted[sorted.length - 1].name;
+        document.getElementById("sa-gain").textContent =
+          "+" +
+          factors.reduce(function (a, f) {
+            return a + f.qw;
+          }, 0);
+        document.getElementById("sa-strong").textContent =
+          factors.filter(function (f) {
+            return f.score >= 70;
+          }).length + " / 8";
+        var overall = document.getElementById("sa-overall");
+        overall.style.borderLeftColor = barColor(avg);
+        document.getElementById("sa-ot").textContent =
+          "Overall verdict: " + verdict(avg);
+        document.getElementById("sa-ob").textContent =
+          avg >= 75
+            ? "LiberiaVoice has a genuinely strong structural advantage: clear niche, diaspora engagement potential, and AI production efficiency. The main work now is activating revenue channels and building credibility fast. Focus the first 90 days on NGO outreach, editorial policy, and social media growth."
+            : avg >= 55
+              ? "The opportunity is real and the niche is strong, but several foundational gaps — editorial trust, social media presence, and revenue infrastructure — need closing before you can scale. Nearly all are solvable in 90 days with focused action."
+              : "LiberiaVoice is still at the concept stage. The market opportunity is strong but the gap between the idea and a viable media business is significant. Prioritize legal registration, editorial credibility, and one or two early revenue clients above all else in Month 1.";
+        var list = document.getElementById("sa-factors");
+        factors.forEach(function (f) {
+          var div = document.createElement("div");
+          div.className = "sa-factor";
+          div.innerHTML =
+            '<div class="sa-factor-top">' +
+            '<span class="sa-factor-name">' +
+            f.name +
+            "</span>" +
+            '<div class="sa-factor-score-wrap">' +
+            '<div class="sa-bar-outer"><div class="sa-bar-inner" style="width:' +
+            f.score +
+            "%;background:" +
+            barColor(f.score) +
+            ';"></div></div>' +
+            '<span class="sa-pct" style="color:' +
+            barColor(f.score) +
+            '">' +
+            f.score +
+            "%</span>" +
+            "</div>" +
+            '<span class="sa-chevron">▼</span>' +
+            "</div>" +
+            '<div class="sa-detail">' +
+            '<div class="sa-detail-grid">' +
+            '<div class="sa-blocker"><div class="sa-dl">What\'s holding it back</div><ul class="sa-dlist">' +
+            f.blockers
+              .map(function (b) {
+                return "<li>" + b + "</li>";
+              })
+              .join("") +
+            "</ul></div>" +
+            '<div class="sa-boost"><div class="sa-dl">How to improve it</div><ul class="sa-dlist">' +
+            f.boosts
+              .map(function (b) {
+                return "<li>" + b + "</li>";
+              })
+              .join("") +
+            "</ul></div>" +
+            "</div>" +
+            "</div>";
+          div
+            .querySelector(".sa-factor-top")
+            .addEventListener("click", function () {
+              var wasOpen = div.classList.contains("open");
+              document.querySelectorAll(".sa-factor").forEach(function (d) {
+                d.classList.remove("open");
+              });
+              if (!wasOpen) div.classList.add("open");
+            });
+          list.appendChild(div);
+        });
+      })();
+    </script>
+
+    <!-- REVENUE MODEL -->
+    <section class="section section--dark" id="revenue">
+      <div class="container">
+        <span class="eyebrow eyebrow--gold">Business Model</span>
+        <h2 style="color: var(--white); margin-bottom: 3rem">
+          Seven Paths to Profitability
+        </h2>
+        <div class="pillar-grid">
+          <div class="pillar-card">
+            <span class="pillar-icon">💳</span>
+            <h3>Premium Subscriptions</h3>
+            <p>
+              Freemium access for all, with a $4–$8/month premium tier offering
+              ad-free reading, exclusive investigations, audio articles, and
+              early content. Target 3,000 subscribers in Year 1.
+            </p>
+            <ul>
+              <li>Monthly & annual billing</li>
+              <li>Diaspora & domestic pricing tiers</li>
+              <li>Gift subscriptions</li>
+            </ul>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-icon">📣</span>
+            <h3>Targeted Advertising</h3>
+            <p>
+              Sell display, native, and sponsored content ads to Liberian and
+              international businesses targeting Liberian consumers — banks,
+              telecoms, NGOs, real estate, and diaspora services.
+            </p>
+            <ul>
+              <li>Banner and native ads</li>
+              <li>Sponsored sector spotlights</li>
+              <li>Diaspora business directories</li>
+            </ul>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-icon">🎓</span>
+            <h3>Education & Events</h3>
+            <p>
+              Virtual webinars, panel discussions, and physical events tied to
+              each sector. Charge ticket fees, sell recordings, and offer
+              sponsorship packages to brands and NGOs.
+            </p>
+            <ul>
+              <li>Annual LiberiaVoice Summit</li>
+              <li>Online masterclasses</li>
+              <li>Sector-specific forums</li>
+            </ul>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-icon">🤝</span>
+            <h3>Brand Partnerships</h3>
+            <p>
+              Long-term content partnerships with brands that want to reach
+              Liberian audiences. Includes editorial integration, influencer
+              amplification, and social campaigns co-produced with LiberiaVoice.
+            </p>
+            <ul>
+              <li>Banks & mobile money firms</li>
+              <li>International NGOs</li>
+              <li>Telecom & tech companies</li>
+            </ul>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-icon">📊</span>
+            <h3>Data & Research Reports</h3>
+            <p>
+              Sell proprietary research reports on Liberian consumer trends,
+              diaspora behavior, sector analytics, and political sentiment to
+              NGOs, governments, investors, and development agencies.
+            </p>
+            <ul>
+              <li>Annual industry reports</li>
+              <li>Custom research briefs</li>
+              <li>Audience insight packages</li>
+            </ul>
+          </div>
+          <div class="pillar-card">
+            <span class="pillar-icon">🎙️</span>
+            <h3>Podcast & Video Network</h3>
+            <p>
+              Monetize a podcast and YouTube channel through sponsorships,
+              pre-rolls, and listener donations. Target diaspora audiences with
+              weekly audio and video content across all 11 sectors.
+            </p>
+            <ul>
+              <li>Anchor / Spotify distribution</li>
+              <li>YouTube AdSense</li>
+              <li>Patreon community tiers</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SOCIAL MEDIA STRATEGY -->
+    <section class="section section--blue" id="social">
+      <div class="container">
+        <span class="eyebrow eyebrow--white">Distribution Strategy</span>
+        <h2 style="color: var(--white); margin-bottom: 1rem">
+          Social Media as Your Primary Channel
+        </h2>
+        <p
+          style="
+            color: rgba(255, 255, 255, 0.65);
+            max-width: 640px;
+            margin-bottom: 3rem;
+            font-size: 0.95rem;
+          "
+        >
+          Your audience is already on social media. LiberiaVoice meets them
+          there, converts followers to subscribers, and builds a community that
+          drives itself.
+        </p>
+        <div class="platform-grid">
+          <div class="platform-card">
+            <div class="platform-icon">📘</div>
+            <h4>Facebook</h4>
+            <p>
+              Primary platform for 35–60 age group. Groups, Live sessions, and
+              Liberian community pages. Target 50K followers by Month 6.
+            </p>
+          </div>
+          <div class="platform-card">
+            <div class="platform-icon">📸</div>
+            <h4>Instagram</h4>
+            <p>
+              Visual storytelling for 18–35. Reels, stories, and culture
+              content. Influencer collaborations. Target 25K by Month 6.
+            </p>
+          </div>
+          <div class="platform-card">
+            <div class="platform-icon">🎵</div>
+            <h4>TikTok</h4>
+            <p>
+              Short-form video for youth. News bites, music reviews, influencer
+              spotlights. Fastest growth channel. Target 30K by Month 6.
+            </p>
+          </div>
+          <div class="platform-card">
+            <div class="platform-icon">🐦</div>
+            <h4>X / Twitter</h4>
+            <p>
+              Political commentary, breaking news, and diaspora debate.
+              Real-time coverage of politics. 15K target by Month 6.
+            </p>
+          </div>
+          <div class="platform-card">
+            <div class="platform-icon">💬</div>
+            <h4>WhatsApp</h4>
+            <p>
+              Daily news digest broadcast. Community groups and channel. Most
+              direct path to Liberian audiences in Africa. Viral sharing.
+            </p>
+          </div>
+        </div>
+        <div
+          style="
+            margin-top: 3rem;
+            display: grid;
+            grid-template-columns: 1fr 1fr 1fr;
+            gap: 1.5rem;
+          "
+        >
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.07);
+              padding: 1.5rem;
+              border-radius: 4px;
+            "
+          >
+            <h4
+              style="
+                color: var(--accent);
+                margin-bottom: 0.75rem;
+                font-size: 1rem;
+              "
+            >
+              📅 Content Cadence
+            </h4>
+            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)">
+              Daily: 2–3 social posts + WhatsApp digest. Weekly: 1 long-form
+              feature + podcast episode. Monthly: 1 deep investigative piece +
+              data report teaser. Use Claude AI to maintain this output with a
+              small team.
+            </p>
+          </div>
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.07);
+              padding: 1.5rem;
+              border-radius: 4px;
+            "
+          >
+            <h4
+              style="
+                color: var(--accent);
+                margin-bottom: 0.75rem;
+                font-size: 1rem;
+              "
+            >
+              🔁 Traffic Funnel
+            </h4>
+            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)">
+              Social teaser → website article → email list → premium
+              subscription. Every social post is a doorway to your site. Every
+              article ends with a subscription prompt. Every email builds
+              retention.
+            </p>
+          </div>
+          <div
+            style="
+              background: rgba(255, 255, 255, 0.07);
+              padding: 1.5rem;
+              border-radius: 4px;
+            "
+          >
+            <h4
+              style="
+                color: var(--accent);
+                margin-bottom: 0.75rem;
+                font-size: 1rem;
+              "
+            >
+              🤝 Influencer Network
+            </h4>
+            <p style="font-size: 0.8rem; color: rgba(255, 255, 255, 0.6)">
+              Partner with Liberian creators on TikTok, Instagram, and YouTube.
+              Co-produce content. Give them a "LiberiaVoice Contributor" badge.
+              Their audiences become yours — at zero cost.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 90-DAY PLAN -->
+    <section class="section" id="plan">
+      <div class="container">
+        <span class="eyebrow">Launch Strategy</span>
+        <h2 style="margin-bottom: 0.75rem">90-Day Launch Plan</h2>
+        <p style="color: var(--muted); max-width: 580px; margin-bottom: 3rem">
+          Three decisive phases from groundwork to full public launch, designed
+          for a lean team powered by AI.
+        </p>
+        <div class="phase-grid">
+          <div class="phase-card">
+            <div class="phase-num">01</div>
+            <div class="phase-period">Days 1–30 · Foundation</div>
+            <h3>Build the Machine</h3>
+            <ul>
+              <li>Register LiberiaVoice brand, domain, and LLC/NGO entity</li>
+              <li>
+                Build responsive website (WordPress/Webflow + custom design)
+              </li>
+              <li>
+                Set up all 5 social media accounts with consistent branding
+              </li>
+              <li>
+                Draft 20 evergreen articles across all 11 sectors with Claude AI
+              </li>
+              <li>
+                Create WhatsApp broadcast list and first 500 subscriber push
+              </li>
+              <li>
+                Record pilot podcast episode (editor intro + top 3 stories)
+              </li>
+              <li>Build pre-launch email list via waitlist landing page</li>
+              <li>Set up Google Analytics, Meta Pixel, and SEO baseline</li>
+              <li>
+                Recruit 5–10 diaspora contributors (no pay — prestige + byline)
+              </li>
+              <li>
+                Establish Claude AI content workflow and editorial calendar
+              </li>
+            </ul>
+          </div>
+          <div class="phase-card">
+            <div class="phase-num">02</div>
+            <div class="phase-period">Days 31–60 · Soft Launch</div>
+            <h3>Go Live, Build Noise</h3>
+            <ul>
+              <li>
+                Publish first 10 articles — 1 per sector — with social
+                amplification
+              </li>
+              <li>
+                Go live on Facebook with a Liberia-focused launch event stream
+              </li>
+              <li>Launch WhatsApp daily digest to initial subscriber base</li>
+              <li>
+                Partner with 3 Liberian influencers for launch amplification
+              </li>
+              <li>
+                Pitch LiberiaVoice to diaspora Facebook groups in US, UK,
+                Germany
+              </li>
+              <li>Launch first TikTok video series: "Liberia in 60 Seconds"</li>
+              <li>
+                Begin outreach to 5 potential advertising clients (banks,
+                telecoms)
+              </li>
+              <li>Host first Twitter/X Space: "State of Liberia's Economy"</li>
+              <li>Hit 1,000 social followers total across all platforms</li>
+              <li>Collect 500 email subscribers — launch free newsletter</li>
+            </ul>
+          </div>
+          <div class="phase-card">
+            <div class="phase-num">03</div>
+            <div class="phase-period">Days 61–90 · Full Launch</div>
+            <h3>Scale & Monetize</h3>
+            <ul>
+              <li>
+                Full public launch with press release to Liberian media networks
+              </li>
+              <li>Launch premium subscription tier at $5/month</li>
+              <li>Publish first LiberiaVoice investigative special report</li>
+              <li>
+                Run first paid social media campaign targeting diaspora in US &
+                UK
+              </li>
+              <li>
+                Sign first advertising contract with a Liberian or regional
+                brand
+              </li>
+              <li>Launch YouTube channel with first 5 video articles</li>
+              <li>
+                Host virtual summit: "Liberia's Future Forum" (ticketed, $10–20)
+              </li>
+              <li>Reach 5,000 total social followers across platforms</li>
+              <li>Hit 1,000+ email subscribers and 100 premium subscribers</li>
+              <li>
+                Publish Month 3 analytics report and refine content strategy
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLAUDE AS PARTNER -->
+    <section class="section section--cream" id="ai">
+      <div class="container">
+        <span class="eyebrow">AI-Powered Newsroom</span>
+        <h2 style="margin-bottom: 0.75rem">How Claude Powers LiberiaVoice</h2>
+        <p style="color: var(--muted); max-width: 600px; margin-bottom: 3rem">
+          Claude AI is not just a tool — it's your co-editor, researcher,
+          translator, analyst, and strategist, allowing a small team to produce
+          world-class content at scale.
+        </p>
+        <div class="claude-grid">
+          <div class="claude-item">
+            <div class="claude-num">01</div>
+            <div>
+              <h4>Content Research & Drafting</h4>
+              <p>
+                Claude researches and drafts articles across all 11 sectors
+                instantly. A journalist provides the angle and sources; Claude
+                produces a polished 800-word draft in minutes, cutting
+                production time by 80%.
+              </p>
+            </div>
+          </div>
+          <div class="claude-item">
+            <div class="claude-num">02</div>
+            <div>
+              <h4>SEO Strategy & Optimization</h4>
+              <p>
+                Claude generates keyword-rich headlines, meta descriptions, and
+                structured article formats that rank on Google — driving organic
+                traffic from Liberians searching for news without paid ads.
+              </p>
+            </div>
+          </div>
+          <div class="claude-item">
+            <div class="claude-num">03</div>
+            <div>
+              <h4>Social Media Content Factory</h4>
+              <p>
+                For every article published, Claude generates 5–10 social media
+                posts tailored to each platform (Facebook, TikTok caption, X
+                thread, WhatsApp digest, Instagram caption) — instantly.
+              </p>
+            </div>
+          </div>
+          <div class="claude-item">
+            <div class="claude-num">04</div>
+            <div>
+              <h4>Newsletter Writing</h4>
+              <p>
+                Claude writes compelling weekly and daily newsletters —
+                personalizing tone, summarizing top stories, writing the subject
+                line, and structuring the email for maximum open rates.
+              </p>
+            </div>
+          </div>
+          <div class="claude-item">
+            <div class="claude-num">05</div>
+            <div>
+              <h4>Podcast Script Writing</h4>
+              <p>
+                Claude scripts full podcast episodes, including intro hooks,
+                interview questions, transitions, and show notes — enabling the
+                team to record quality audio content weekly.
+              </p>
+            </div>
+          </div>
+          <div class="claude-item">
+            <div class="claude-num">06</div>
+            <div>
+              <h4>Revenue & Pitch Document Creation</h4>
+              <p>
+                Claude writes advertising pitch decks, sponsorship proposals,
+                media kits, and grant applications — enabling the business team
+                to approach clients professionally from Day 1.
+              </p>
+            </div>
+          </div>
+          <div class="claude-item">
+            <div class="claude-num">07</div>
+            <div>
+              <h4>Data Analysis & Reports</h4>
+              <p>
+                Claude analyzes readership data, social metrics, and sector
+                trends to produce monthly insight reports — helping editorial
+                and sales teams make evidence-based decisions.
+              </p>
+            </div>
+          </div>
+          <div class="claude-item">
+            <div class="claude-num">08</div>
+            <div>
+              <h4>Translation & Localization</h4>
+              <p>
+                Claude helps translate key content into Liberian English
+                vernacular, French (for diaspora in West Africa), and formats
+                content for low-bandwidth mobile consumption prevalent in
+                Liberia.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUBSCRIBE -->
+    <section class="section section--red" id="subscribe">
+      <div class="container">
+        <div class="subscribe-box">
+          <span class="eyebrow" style="color: rgba(255, 255, 255, 0.7)"
+            >Join the Movement</span
+          >
+          <h2 style="color: var(--white); margin-bottom: 1rem">
+            Be First. Be Liberian.
+          </h2>
+          <p style="color: rgba(255, 255, 255, 0.7); font-size: 0.95rem">
+            Join thousands of Liberians at home and abroad who are signing up
+            for early access to LiberiaVoice. Get founding member status and 3
+            months free premium when we launch.
+          </p>
+          <div class="subscribe-form">
+            <input type="email" placeholder="your@email.com" />
+            <button>Subscribe Free</button>
+          </div>
+          <p
+            style="
+              font-size: 0.72rem;
+              color: rgba(255, 255, 255, 0.4);
+              margin-top: 0.75rem;
+            "
+          >
+            No spam. Unsubscribe anytime. Your data stays with us.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-top">
+        <div>
+          <span class="footer-logo">Liberia<span>Voice</span></span>
+          <p class="footer-desc">
+            The pulse of Liberia, worldwide. Covering education, politics,
+            agriculture, sports, music, influencers, charities, business,
+            culture, diaspora, and technology — for Liberians everywhere.
+          </p>
+          <div style="display: flex; gap: 0.75rem">
+            <a
+              href="#"
+              style="
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 1.2rem;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = '#D4A017'"
+              onmouseout="this.style.color = 'rgba(255,255,255,0.4)'"
+              >📘</a
+            >
+            <a
+              href="#"
+              style="
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 1.2rem;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = '#D4A017'"
+              onmouseout="this.style.color = 'rgba(255,255,255,0.4)'"
+              >📸</a
+            >
+            <a
+              href="#"
+              style="
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 1.2rem;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = '#D4A017'"
+              onmouseout="this.style.color = 'rgba(255,255,255,0.4)'"
+              >🐦</a
+            >
+            <a
+              href="#"
+              style="
+                color: rgba(255, 255, 255, 0.4);
+                font-size: 1.2rem;
+                text-decoration: none;
+                transition: color 0.2s;
+              "
+              onmouseover="this.style.color = '#D4A017'"
+              onmouseout="this.style.color = 'rgba(255,255,255,0.4)'"
+              >🎵</a
+            >
+          </div>
+        </div>
+        <div class="footer-col">
+          <h5>Sections</h5>
+          <ul>
+            <li><a href="#">Politics</a></li>
+            <li><a href="#">Business</a></li>
+            <li><a href="#">Education</a></li>
+            <li><a href="#">Agriculture</a></li>
+            <li><a href="#">Sports</a></li>
+            <li><a href="#">Music</a></li>
+            <li><a href="#">Diaspora</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Culture</a></li>
+            <li><a href="#">Charities</a></li>
+            <li><a href="#">Influencers</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Company</h5>
+          <ul>
+            <li><a href="#">About Us</a></li>
+            <li><a href="#">Editorial Policy</a></li>
+            <li><a href="#">Write for Us</a></li>
+            <li><a href="#">Advertise</a></li>
+            <li><a href="#">Partnerships</a></li>
+            <li><a href="#">Press Kit</a></li>
+            <li><a href="#">Careers</a></li>
+            <li><a href="#">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h5>Subscribe</h5>
+          <ul>
+            <li><a href="#">Free Newsletter</a></li>
+            <li><a href="#">Premium Membership</a></li>
+            <li><a href="#">WhatsApp Updates</a></li>
+            <li><a href="#">Podcast</a></li>
+            <li><a href="#">YouTube Channel</a></li>
+          </ul>
+          <div
+            style="
+              margin-top: 1.5rem;
+              padding: 1rem;
+              background: rgba(255, 255, 255, 0.04);
+              border-radius: 4px;
+              border-left: 2px solid var(--red);
+            "
+          >
+            <p
+              style="
+                font-size: 0.75rem;
+                color: rgba(255, 255, 255, 0.4);
+                line-height: 1.6;
+              "
+            >
+              Powered by
+              <span style="color: #d4a017; font-weight: 600">Claude AI</span> ·
+              Built in Liberia · For Liberians Worldwide 🇱🇷
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2025 LiberiaVoice Media. All rights reserved.</span>
+        <div style="display: flex; gap: 1.5rem">
+          <a
+            href="#"
+            style="
+              color: rgba(255, 255, 255, 0.3);
+              text-decoration: none;
+              font-size: 0.72rem;
+            "
+            >Privacy Policy</a
+          >
+          <a
+            href="#"
+            style="
+              color: rgba(255, 255, 255, 0.3);
+              text-decoration: none;
+              font-size: 0.72rem;
+            "
+            >Terms of Use</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Smooth scroll for nav links
+      document.querySelectorAll('a[href^="#"]').forEach((a) => {
+        a.addEventListener("click", (e) => {
+          const target = document.querySelector(a.getAttribute("href"));
+          if (target) {
+            e.preventDefault();
+            target.scrollIntoView({ behavior: "smooth", block: "start" });
+          }
+        });
+      });
+
+      // Subscribe form feedback
+      const form = document.querySelector(".subscribe-form");
+      if (form) {
+        form.addEventListener("submit", (e) => {
+          e.preventDefault();
+          const input = form.querySelector("input");
+          const btn = form.querySelector("button");
+          if (input.value.includes("@")) {
+            btn.textContent = "✓ You're on the list!";
+            btn.style.background = "#2E7D32";
+            btn.style.color = "#fff";
+            input.value = "";
+            input.placeholder = "Thanks! We'll be in touch.";
+          }
+        });
+        form
+          .querySelector("button")
+          .addEventListener("click", () =>
+            form.dispatchEvent(new Event("submit")),
+          );
+      }
+    </script>
+  </body>
+</html>
